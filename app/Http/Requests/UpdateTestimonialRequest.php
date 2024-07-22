@@ -23,6 +23,9 @@ class UpdateTestimonialRequest extends FormRequest
     {
         return [
             //
+            "message" => ["required", "string", "max:255"],
+            "project_client_id" => ["required", 'string', 'max:255'],
+            "thumbnail" => ["sometimes", "image", "mimes:png,jpg,jpeg,webp"],
         ];
     }
 }

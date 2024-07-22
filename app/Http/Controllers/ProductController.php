@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $products = Product::orderByDesc('id')->paginate(10);
+        return view ('admin.products.index', compact('products'));
     }
 
     /**
@@ -21,12 +24,14 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return view ('admin.products.create'); 
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         //
     }

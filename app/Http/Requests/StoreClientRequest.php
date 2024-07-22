@@ -23,6 +23,10 @@ class StoreClientRequest extends FormRequest
     {
         return [
             //
+            "name" => ["required", "string", "max:255"],
+            "occupation" => ["required", 'string', 'max:255'],
+            "avatar" => ["required", "image", "mimes:png,jpg,jpeg,webp"],
+            "logo" => ["required", 'image', 'mimes:png,jpg,jpeg,webp'],
         ];
     }
 }

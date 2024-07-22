@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreClientRequest;
 use App\Models\ProjectClient;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ class ProjectClientController extends Controller
     public function index()
     {
         //
+        $clients = ProjectClient::orderByDesc('id')->paginate(10);
+        return view ('admin.clients.index', compact('clients'));
     }
 
     /**
@@ -21,12 +24,14 @@ class ProjectClientController extends Controller
     public function create()
     {
         //
+        return view ('admin.clients.create'); 
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreClientRequest $request)
     {
         //
     }

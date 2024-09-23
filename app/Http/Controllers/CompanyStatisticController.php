@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStatisticsRequest;
 use App\Models\CompanyStatistic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CompanyStatisticController extends Controller
 {
@@ -33,7 +34,18 @@ class CompanyStatisticController extends Controller
     public function store(StoreStatisticsRequest $request)
     {
         // insert ke database pada table tertentu
-        
+        DB::transaction(function () use ($request){
+            $validated = $request->validated();
+
+            if ($request -> hasFile('icon')){
+                $iconPath = $request -> file('icon') -> store('icons', 'public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $newDataRecord = CompanyStatistic::create($validated);
+        });
+
+        return redirect()->route('admin.statistics.index');
     }
 
     /**
@@ -63,8 +75,12 @@ class CompanyStatisticController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompanyStatistic $companyStatistic)
+    public function destroy(CompanyStatistic $statistic)
     {
         //
+        DB::transaction(function () use ($statistic) {
+            $statistic->delete();
+        });
+        return redirect()->route('admin.statistics.index');
     }
 }

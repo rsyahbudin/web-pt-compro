@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHeroSectionRequest;
 use App\Models\HeroSection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HeroSectionController extends Controller
 {
@@ -14,8 +15,8 @@ class HeroSectionController extends Controller
     public function index()
     {
         //
-        $hero_section = HeroSection::orderByDesc('id')->paginate(10);
-        return view ('admin.hero_section.index', compact('hero_section'));
+        $hero_sections = HeroSection::orderByDesc('id')->paginate(10);
+        return view ('admin.hero_sections.index', compact('hero_sections'));
     }
 
     /**
@@ -24,7 +25,7 @@ class HeroSectionController extends Controller
     public function create()
     {
         //
-        return view ('admin.hero_section.create'); 
+        return view ('admin.hero_sections.create'); 
 
     }
 
@@ -34,6 +35,20 @@ class HeroSectionController extends Controller
     public function store(StoreHeroSectionRequest $request)
     {
         //
+        DB::transaction(function () use ($request){
+            $validated = $request->validated();
+            dd($validated); // Debug untuk melihat data
+
+
+            if ($request -> hasFile('banner')){
+                $bannerPath = $request -> file('banner') -> store('banners', 'public');
+                $validated['banner'] = $bannerPath;
+            }
+
+            $newHeroSection = HeroSection::create($validated);
+        });
+
+        return redirect()->route('admin.hero_sections.index');
     }
 
     /**
@@ -63,8 +78,12 @@ class HeroSectionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HeroSection $heroSection)
+    public function destroy(HeroSection $hero_section)
     {
         //
+        DB::transaction(function () use ($hero_section) {
+            $hero_section->delete();
+        });
+        return redirect()->route('admin.hero_sections.index');
     }
 }

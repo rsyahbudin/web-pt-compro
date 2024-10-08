@@ -17,7 +17,6 @@
                     @endif
                 <form method="POST" action="{{route('admin.hero_sections.store')}}" class="mt-6 space-y-6" enctype="multipart/form-data"> 
                     @csrf
-
                     <div>
                         <x-input-label for="heading" :value="__('heading')" />
                         <x-text-input id="heading" class="block mt-1 w-full" type="text" name="heading" :value="old('heading')" required autofocus autocomplete="heading" />

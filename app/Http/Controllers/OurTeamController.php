@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTeamRequest;
+use App\Http\Requests\UpdateTeamRequest;
 use App\Models\OurTeam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -60,27 +61,41 @@ class OurTeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurTeam $ourTeam)
+    public function edit(OurTeam $team)
     {
         //
+        return view ('admin.teams.edit', compact('team')); 
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OurTeam $ourTeam)
+    public function update(UpdateTeamRequest $request, OurTeam $team)
     {
         //
+        DB::transaction(function () use ($request, $team) {
+            $validated = $request->validated();
+
+            if ($request -> hasFile('avatar')){
+                $avatarPath = $request -> file('avatar') -> store('avatars', 'public');
+                $validated['avatar'] = $avatarPath;
+            }
+
+            $team->update($validated);
+        });
+
+        return redirect()->route('admin.teams.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OurTeam $ourTeam)
+    public function destroy(OurTeam $team)
     {
         //
-        DB::transaction(function () use ($ourTeam) {
-            $ourTeam->delete();
+        DB::transaction(function () use ($team) {
+            $team->delete();
         });
         return redirect()->route('admin.teams.index');
     }

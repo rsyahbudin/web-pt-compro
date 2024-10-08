@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTestimonialRequest;
+use App\Http\Requests\UpdateTestimonialRequest;
 use App\Models\ProjectClient;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class TestimonialController extends Controller
     {
         //
         $testimonials = Testimonial::orderByDesc('id')->paginate(10);
-        return view ('admin.testimonials.index', compact('testimonials'));
+        return view('admin.testimonials.index', compact('testimonials'));
     }
 
     /**
@@ -27,8 +28,7 @@ class TestimonialController extends Controller
     {
         //
         $clients = ProjectClient::orderByDesc('id')->get();
-        return view ('admin.testimonials.create', compact('clients')); 
-
+        return view('admin.testimonials.create', compact('clients'));
     }
 
     /**
@@ -37,11 +37,11 @@ class TestimonialController extends Controller
     public function store(StoreTestimonialRequest $request)
     {
         //
-        DB::transaction(function () use ($request){
+        DB::transaction(function () use ($request) {
             $validated = $request->validated();
 
-            if ($request -> hasFile('thumbnail')){
-                $thumbnailPath = $request -> file('thumbnail') -> store('thumbnails', 'public');
+            if ($request->hasFile('thumbnail')) {
+                $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
                 $validated['thumbnail'] = $thumbnailPath;
             }
 
@@ -65,14 +65,28 @@ class TestimonialController extends Controller
     public function edit(Testimonial $testimonial)
     {
         //
+        $clients = ProjectClient::orderByDesc('id')->get();
+        return view('admin.testimonials.edit', compact('testimonial', 'clients'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
     {
         //
+        DB::transaction(function () use ($request, $testimonial) {
+            $validated = $request->validated();
+
+            if ($request->hasFile('thumbnail')) {
+                $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+                $validated['thumbnail'] = $thumbnailPath;
+            }
+
+            $testimonial -> update($validated);
+        });
+
+        return redirect()->route('admin.testimonials.index');
     }
 
     /**
@@ -84,6 +98,6 @@ class TestimonialController extends Controller
         DB::transaction(function () use ($testimonial) {
             $testimonial->delete();
         });
-        return redirect()->route('admin.testimonial .index');
+        return redirect()->route('admin.testimonials.index');
     }
 }

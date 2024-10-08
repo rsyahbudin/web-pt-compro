@@ -44,6 +44,14 @@ class RolePermissionSeeder extends Seeder
             ]
         );
 
+        $user = User::create(
+            [
+                'email' => 'syahbudinpenting@gmail.com', // Kriteria pencarian
+                'name' => 'admin',
+                'password' => bcrypt('123') // Jangan lupa untuk menggunakan bcrypt
+            ]
+        );
+
         // Assign role ke user
         $user->assignRole($superAdminRole);
     }

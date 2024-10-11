@@ -276,6 +276,7 @@
         </div>
     </div>
 </div> -->
+<!-- test -->
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
     <div class="container max-w-[1000px] mx-auto">
         <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">

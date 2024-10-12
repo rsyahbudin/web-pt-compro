@@ -11,7 +11,7 @@
             <div class="breadcrumb flex items-center justify-center gap-[30px]">
                 <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
                 <span class="text-cp-light-grey">/</span>
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Team</p>
+                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Warehouse</p>
             </div>
             <h2 class="font-bold text-4xl leading-[45px] text-center">We’re Here to Build <br> Your Awesome Projects</h2>
         </div>

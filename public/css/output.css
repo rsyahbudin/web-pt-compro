@@ -62,6 +62,11 @@ html,
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Adjust as necessary */
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20px;
@@ -169,6 +174,11 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+}
+
+.custom-list {
+  list-style-type: disc; /* Use disc bullets */
+  padding-left: 1.5rem; /* Space between the bullets and text */
 }
 
 .awards-card {

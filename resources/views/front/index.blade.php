@@ -108,7 +108,8 @@
 
     </div>
 </div>
-<div id="Stats" class="bg-cp-black w-full mt-20">
+
+<!-- <div id="Stats" class="bg-cp-black w-full mt-20">
     <div class="container max-w-[1000px] mx-auto py-10">
         <div class="flex flex-wrap items-center justify-between p-[10px]">
 
@@ -126,7 +127,7 @@
 
         </div>
     </div>
-</div>
+</div> -->
 <!-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
 
     @forelse($products as $product)
@@ -149,8 +150,7 @@
 
 </div> -->
 
-<div id="About" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
-
+<!-- <div id="About" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
     @forelse($abouts as $about)
     <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
         <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
@@ -161,7 +161,6 @@
             <div class="flex flex-col gap-[10px]">
                 <h2 class="font-bold text-4xl leading-[45px]">{{ $about->name }}</h2>
                 <div class="flex flex-col gap-5">
-
                     @forelse ($about -> keypoints as $keypoint)
                     <div class="flex items-center gap-[10px]">
                         <div class="w-6 h-6 flex shrink-0">
@@ -180,53 +179,38 @@
     <p>Belum ada data terbaru</p>
     @endforelse
 
-</div>
+</div> -->
 
 <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
         <div class="flex flex-col gap-[14px] items-center">
             <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR CORE VALUE</p>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The World</h2>
+            <h2 class="font-bold text-4xl leading-[45px] text-center">These Are The Core Values <br> Upheld By Our Company.</h2>
         </div>
         <div class="teams-card-container grid gap-[30px] justify-center">
 
             @forelse($teams as $team)
-            <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full">
-                    <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-                        <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full object-center" alt="photo">
-                    </div>
+            <div class="card bg-white flex flex-col h-full items-center p-[30px] px-[29px] gap-[15px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                <div class="w-[100px] h-[100px] flex items-center justify-center rounded-full overflow-hidden bg-gray-100">
+                    <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full object-top" alt="photo">
                 </div>
+                <div class="h-4"></div>
                 <div class="flex flex-col gap-1 text-center">
                     <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
                     <p class="text-cp-light-grey">{{ $team->occupation }}</p>
                 </div>
-                <!-- <div class="flex items-center justify-center gap-[10px]">
-                    <div class="w-6 h-6 flex shrink-0">
-                        <img src="{{ asset('assets/icons/global.svg')}}" alt="icon">
-                    </div>
-                    <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
-                </div> -->
             </div>
             @empty
             <p>belum ada data terbaru</p>
             @endforelse
 
             <a href="{{route('front.team')}}" class="view-all-card">
-                <!-- <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                    <div class="w-[60px] h-[60px] flex shrink-0">
-                        <img src="{{ asset('assets/icons/profile-2user.svg')}}" alt="icon">
-                    </div>
-                    <div class="flex flex-col gap-1 text-center">
-                        <p class="font-bold text-xl leading-[30px]">View All</p>
-                        <p class="text-cp-light-grey">Our Great People</p>
-                    </div>
-                </div> -->
+                <!-- Additional code for "View All" card can be included here -->
             </a>
         </div>
     </div>
 </div>
-<div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
+<!-- <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
     <div class="flex flex-col gap-[14px] items-center">
         <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
         <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company</h2>
@@ -286,12 +270,12 @@
         <p>belum ada data terbaru</p>
         @endforelse
     </div>
-</div>
+</div> -->
  <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
         <div class="flex flex-col gap-[14px]">
             <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
-            <h2 class="font-bold text-4xl leading-[45px]">We’ve Dedicated Our<br>Best Team Efforts</h2>
+            <h2 class="font-bold text-4xl leading-[45px]">Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.</h2>
         </div>
         <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
@@ -303,14 +287,12 @@
             <hr class="border-[#E8EAF2]">
             <p class="font-bold text-xl leading-[30px]">Vision</p>
             <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey" >- We will strive to dominate every market sector in the food
-            and beverage industry by emphasizing quality, marketing
-            strategies, and customer service via the skill and
-            dedication of every person in every role they perform.
-            </p>
-            <p class="text-cp-light-grey ju">To be the industry's chosen leading partner for the
-            provision of excellent raw materials, nutritional products,
-            and business solutions
+            <p class="text-cp-light-grey text-sm">
+                <ul class="custom-list list-inside mt-2">
+                    <li>We will strive to dominate every market sector in the food and beverage industry by emphasizing quality, marketing strategies, and customer service via the skill and dedication of every person in every role they perform</li>
+                    <br>
+                    <li>To be the industry's chosen leading partner for the provision of excellent raw materials, nutritional products, and business solution.</li>
+                </ul>
             </p>
         </div>
         <div class="awards-card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
@@ -320,9 +302,10 @@
             <hr class="border-[#E8EAF2]">
             <p class="font-bold text-xl leading-[30px]">Mission</p>
             <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Our goal is to deliver the finest possible service so that
-            the food and beverage sector can embrace us at all
-            levels
+            <p class="text-cp-light-grey text-sm">
+                <ul class="custom-list list-inside mt-2">
+                    <li>Our goal is to deliver the finest service so that the food and beverage sector can embrace us at all levels</li>
+                </ul>
             </p>
         </div>
         <div class="awards-card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
@@ -332,11 +315,11 @@
             <hr class="border-[#E8EAF2]">
             <p class="font-bold text-xl leading-[30px]">Values</p>
             <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">A solid reputation for upholding long-term client
-            relationships through keeping our word, supporting our
-            business dealings, and offering the finest level of
-            professional services so that we can both grow
-            together.
+            <p class="text-cp-light-grey text-sm">
+                <ul class="custom-list list-inside mt-2">
+                    <li>We uphold long-term client relationships by keeping our word, supporting our business dealings, and providing the highest level of professional services to foster mutual growth</li>
+                </ul>    
+            
             </p>
         </div>
     </div>

@@ -127,7 +127,7 @@
         </div>
     </div>
 </div>
-<div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
+<!-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
 
     @forelse($products as $product)
     <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
@@ -147,18 +147,52 @@
     <p>belum ada data terbaru</p>
     @endforelse
 
+</div> -->
+
+<div id="About" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
+
+    @forelse($abouts as $about)
+    <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
+        <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
+            <img src="{{Storage::url($about->thumbnail)}}" class="w-full h-full object-contain" alt="thumbnail">
+        </div>
+        <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
+            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR {{ $about->type }}</p>
+            <div class="flex flex-col gap-[10px]">
+                <h2 class="font-bold text-4xl leading-[45px]">{{ $about->name }}</h2>
+                <div class="flex flex-col gap-5">
+
+                    @forelse ($about -> keypoints as $keypoint)
+                    <div class="flex items-center gap-[10px]">
+                        <div class="w-6 h-6 flex shrink-0">
+                            <img src="assets/icons/tick-circle.svg" alt="icon">
+                        </div>
+                        <p class="leading-[26px] font-semibold">{{$keypoint -> keypoint}}</p>
+                    </div>
+                    @empty
+                    @endforelse
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @empty
+    <p>Belum ada data terbaru</p>
+    @endforelse
+
 </div>
+
 <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
         <div class="flex flex-col gap-[14px] items-center">
-            <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR POWERFUL TEAM</p>
+            <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR CORE VALUE</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The World</h2>
         </div>
-        <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+        <div class="teams-card-container grid gap-[30px] justify-center">
 
             @forelse($teams as $team)
             <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
+                <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full">
                     <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
                         <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full object-center" alt="photo">
                     </div>
@@ -167,19 +201,19 @@
                     <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
                     <p class="text-cp-light-grey">{{ $team->occupation }}</p>
                 </div>
-                <div class="flex items-center justify-center gap-[10px]">
+                <!-- <div class="flex items-center justify-center gap-[10px]">
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="{{ asset('assets/icons/global.svg')}}" alt="icon">
                     </div>
                     <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
-                </div>
+                </div> -->
             </div>
             @empty
             <p>belum ada data terbaru</p>
             @endforelse
 
             <a href="{{route('front.team')}}" class="view-all-card">
-                <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                <!-- <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
                     <div class="w-[60px] h-[60px] flex shrink-0">
                         <img src="{{ asset('assets/icons/profile-2user.svg')}}" alt="icon">
                     </div>
@@ -187,7 +221,7 @@
                         <p class="font-bold text-xl leading-[30px]">View All</p>
                         <p class="text-cp-light-grey">Our Great People</p>
                     </div>
-                </div>
+                </div> -->
             </a>
         </div>
     </div>
@@ -253,7 +287,7 @@
         @endforelse
     </div>
 </div>
-<!-- <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+ <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
         <div class="flex flex-col gap-[14px]">
             <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
@@ -261,45 +295,52 @@
         </div>
         <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
-    <div class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{ asset('assets/icons/cup-blue.svg')}}" alt="icon">
+    <div class="awards-card-container grid justify-center">
+        <div class="awards-card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+            <div class="w-[60px] h-[55px] flex shrink-0">
+                <img src="{{ asset('assets/icons/values.jpg')}}" alt="icon">
             </div>
             <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Solid Fundamental Crafter Async</p>
+            <p class="font-bold text-xl leading-[30px]">Vision</p>
             <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Bali, 2020</p>
+            <p class="text-cp-light-grey" >- We will strive to dominate every market sector in the food
+            and beverage industry by emphasizing quality, marketing
+            strategies, and customer service via the skill and
+            dedication of every person in every role they perform.
+            </p>
+            <p class="text-cp-light-grey ju">To be the industry's chosen leading partner for the
+            provision of excellent raw materials, nutritional products,
+            and business solutions
+            </p>
         </div>
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{ asset('assets/icons/cup-blue.svg')}}" alt="icon">
+        <div class="awards-card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+            <div class="w-[60px] h-[55px] flex shrink-0">
+                <img src="{{ asset('assets/icons/mission.jpg')}}" alt="icon">
             </div>
             <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Most Crowded Yet Harmony Place</p>
+            <p class="font-bold text-xl leading-[30px]">Mission</p>
             <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Shanghai, 2021</p>
+            <p class="text-cp-light-grey">Our goal is to deliver the finest possible service so that
+            the food and beverage sector can embrace us at all
+            levels
+            </p>
         </div>
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+        <div class="awards-card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
             <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{ asset('assets/icons/cup-blue.svg')}}" alt="icon">
+                <img src="{{ asset('assets/icons/vision.jpg')}}" alt="icon">
             </div>
             <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Small Things Made Much Big Impacts</p>
+            <p class="font-bold text-xl leading-[30px]">Values</p>
             <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Zurich, 2022</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{ asset('assets/icons/cup-blue.svg')}}" alt="icon">
-            </div>
-            <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Teamwork and Solidarity</p>
-            <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Bandung, 2023</p>
+            <p class="text-cp-light-grey">A solid reputation for upholding long-term client
+            relationships through keeping our word, supporting our
+            business dealings, and offering the finest level of
+            professional services so that we can both grow
+            together.
+            </p>
         </div>
     </div>
-</div> -->
+</div> 
 <!-- test -->
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
     <div class="container max-w-[1000px] mx-auto">
@@ -364,11 +405,11 @@
         <div class="flex flex-col gap-10">
             <div class="flex items-center gap-3">
                 <div class="flex shrink-0 h-[43px] overflow-hidden">
-                    <img src="{{ asset('assets/logo/logo.svg')}}" class="object-contain w-full h-full" alt="logo">
+                    <img src="{{ asset('assets/logo/logos.png')}}" class="object-contain w-full h-full" alt="logo">
                 </div>
                 <div class="flex flex-col">
-                    <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">Elevasi</p>
-                    <p id="CompanyTagline" class="text-sm text-cp-light-grey">Constructor</p>
+                    <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">SPS</p>
+                    <p id="CompanyTagline" class="text-sm text-cp-light-grey">Food Manufacturing</p>
                 </div>
             </div>
             <div class="flex items-center gap-4">
@@ -393,6 +434,7 @@
                     </div>
                 </a>
             </div>
+            
         </div>
         <div class="flex flex-wrap gap-[50px]">
             <div class="flex flex-col w-[200px] gap-3">
@@ -405,8 +447,10 @@
             </div>
             <div class="flex flex-col w-[200px] gap-3">
                 <p class="font-bold text-lg text-white">About</p>
+                
+                <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Company Name : PT Setia Primatama Semesta</a>
                 @forelse ($abouts as $about)
-                <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">{{ $about->type }}</a>
+                <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Test</a>
                 @empty
                 <p>tidak ada data terbaru</p>
                 @endforelse

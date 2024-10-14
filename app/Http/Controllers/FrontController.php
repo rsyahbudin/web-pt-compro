@@ -21,7 +21,7 @@ class FrontController extends Controller
     {
         // Kode logika untuk halaman utama
         $statistics = CompanyStatistic::take(4)->get();
-        $principles = OurPrinciple::take(4)->get();
+        $principles = OurPrinciple::take(3)->get();
         $products = Product::take(10)->get();
         $teams = OurTeam::take(7)->get();
         $testimonials = Testimonial::take(4)->get();

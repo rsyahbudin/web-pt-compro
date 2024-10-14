@@ -171,6 +171,36 @@ sup {
   vertical-align: baseline;
 }
 
+.awards-card {
+  width: 350px; /* Set the width as needed */
+    margin: 15px; /* Adjust this value to create the desired gap */
+    padding: 30; /* Add padding inside the card */
+    border: 1px solid #E8EAF2; /* Example border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.awards-card-container {
+  display: grid; /* Ensure this is a grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between cards */
+}
+
+.teams-card-container {
+  grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr); /* Three columns on large screens */
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(5, 1fr); /* Five columns on extra-large screens */
+  }
+}
+
 sub {
   bottom: -0.25em;
 }

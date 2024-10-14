@@ -8,19 +8,21 @@
         @forelse ($hero_section as $hero)
         <input type="hidden" name="path_video" id="path_video" value="{{$hero->path_video}}">
         <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
-            <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
-                <div class="w-5 h-5 flex shrink-0 overflow-hidden">
+            <div class="flex items-center bg-[#F6F7FA] p-[8px_16px] gap-[10px] rounded-full w-fit">
+                <!-- <div class="w-5 h-5 flex shrink-0 overflow-hidden">
                     <img src="{{ Storage::url($hero->banner)}}" class="object-contain" alt="icon">
                 </div>
-                <p class="font-semibold text-sm">{{ $hero->achievment }}</p>
+                <p class="font-semibold text-sm">{{ $hero->achievment }}</p> -->
             </div>
             <div class="flex flex-col gap-[10px]">
                 <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">{{$hero->heading}}</h1>
                 <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{$hero->subheading}}</p>
             </div>
             <div class="flex items-center gap-4">
-                <a href="" class="bg-cp-dark-blue p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore Now</a>
-                <button class="bg-cp-black p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]" onclick="{modal.show()}">
+                <!-- <a href="#OurPrinciples" class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore Now</a> -->
+                <a href="#OurPrinciples" class="explore-now-btn bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore Now</a>
+
+                <button class="bg-cp-dark-blue p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]" onclick="{modal.show()}">
                     <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                         <img src="{{ asset('assets/icons/play-circle.svg')}}" class="w-full h-full object-contain" alt="icon">
                     </div>
@@ -34,35 +36,57 @@
 
     </div>
     <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
-        <img src="{{ asset('assets/backgrounds/banner.jpg')}}" class="object-cover w-full h-full" alt="banner">
+        <img src="{{ asset('assets/backgrounds/warehouse.jpg')}}" class="object-cover w-full h-full" alt="banner">
     </div>
 </div>
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-    <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
+    <h2 class="font-bold text-lg">Trusted by 500+ Leading Food and Pharmaceutical Manufacturers Across Indonesia</h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
-
-        @forelse ($clients as $client)
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
-            </div>
+    @forelse ($clients as $client)
+    <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+        <div class="overflow-hidden h-9">
+            <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
         </div>
-        @empty
-        <p>belum ada data terbaru</p>
-        @endforelse
     </div>
+    @empty
+    <p>belum ada data terbaru</p>
+    @endforelse
+</div>
+
 </div>
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
         <div class="flex flex-col gap-[14px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRINCIPLES</p>
-            <h2 class="font-bold text-4xl leading-[45px]">We Might Best Choice <br> For Your Company</h2>
+            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRODUCTS</p>
+            <h2 class="font-bold text-4xl leading-[45px]">We Provide Best Products <br> For Your Company</h2>
         </div>
-        <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+        <a href="" class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
 
-        @forelse ($principles as $principle)
+            @forelse ($principles as $principle)
+            <div class="card w-[356.67px] h-[201px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300" >
+                <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
+                    <img src="{{ Storage::url($principle->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
+                </div>
+                <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
+                    <!-- <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
+                        <img src="{{ Storage::url($principle->icon)}}" class="w-full h-full object-contain" alt="icon">
+                    </div> -->
+                    <div class="flex flex-col gap-1">
+                        <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
+                        <div class="flex-shrink-0 h-[200px] overflow-hidden"> 
+                            <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
+                        </div>
+                    </div>
+                    <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
+                </div>
+            </div>
+        @empty
+            <p>belum ada data terbaru</p>
+        @endforelse
+
+        <!-- @forelse ($principles as $principle)
         <div class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
             <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
                 <img src="{{ Storage::url($principle->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
@@ -80,7 +104,7 @@
         </div>
         @empty
         <p>belum ada data terbaru</p>
-        @endforelse
+        @endforelse -->
 
     </div>
 </div>
@@ -436,5 +460,14 @@
 <script src="{{asset('js/accordion.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script src="js/modal-video.js"></script>
+<script>
+document.getElementById("explore-now-btn").addEventListener("click", function() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth" // Smooth scrolling effect
+    });
+});
+</script>
 
+</script>
 @endpush

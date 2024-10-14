@@ -40,6 +40,9 @@
                                 <x-dropdown-link :href="route('admin.statistics.index')">
                                     {{ __('Company Stats') }}
                                 </x-dropdown-link>
+                                <x-dropdown-link :href="route('admin.clients.index')">
+                                    {{ __('Client') }}
+                                </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
                     </div>

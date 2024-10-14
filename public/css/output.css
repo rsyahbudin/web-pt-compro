@@ -54,12 +54,18 @@ html,
   /* 6 */
   -webkit-tap-highlight-color: transparent;
   /* 7 */
+  scroll-behavior: smooth;
 }
 
 /*
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
 
 body {
   margin: 0;
@@ -1124,6 +1130,11 @@ video {
 .bg-cp-dark-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(49 46 203 / var(--tw-bg-opacity));
+}
+
+.bg-cp-dark-red {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 16 16 / var(--tw-bg-opacity));
 }
 
 .bg-cp-light-blue {

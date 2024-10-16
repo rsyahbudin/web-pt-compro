@@ -36,7 +36,7 @@
 
     </div>
     <div class="warehouse-bg absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
-        <img src="{{ asset('assets/backgrounds/warehouse.jpg')}}" class="object-cover w-full h-full" alt="banner">
+        <img src="{{ asset('assets/backgrounds/warehouseori.jpg')}}" class="object-cover w-full h-full" alt="banner">
     </div>
 </div>
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
@@ -108,7 +108,7 @@
         </div>
     </div>
 </div> -->
-<div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
+<!-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
 
     @forelse($products as $product)
     <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
@@ -128,7 +128,7 @@
     <p>belum ada data terbaru</p>
     @endforelse
 
-</div>
+</div> -->
 
 <!-- <div id="About" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
     @forelse($abouts as $about)
@@ -190,6 +190,74 @@
         </div>
     </div>
 </div>
+
+<div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
+    <div class="flex flex-col gap-[14px] items-center">
+        <!-- <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR WAREHOUSE</p> -->
+        <!-- <h2 class="font-bold text-4xl leading-[45px] text-center">Discover Our Warehouse <br>Serving Clients Nationwide</h2> -->
+    </div>
+    <div class="main-carousel w-full">
+
+        @forelse($testimonials as $testimonial)
+        <div class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
+            <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
+                <div class="flex flex-col gap-[30px]">
+                    <div class="h-9 overflow-hidden">
+                        <img src="{{ Storage::url($testimonial->client->logo)}}" class="object-contain" alt="icon">
+                    </div>
+                    <div class="relative pt-[27px] pl-[30px]">
+                        <div class="absolute top-0 left-0">
+                            <img src="{{ asset('assets/icons/quote.svg')}}" alt="icon">
+                        </div>
+                        <p class="font-semibold text-4xl leading-[46px] relative z-10">Discover Our Warehouse <br>Serving Clients Nationwide</p>
+                    </div>
+                    <div class="flex items-center justify-between pl-[30px]">
+                        <!-- <div class="flex items-center gap-6">
+                            <div class="w-[60px] h-[60px] flex shrink-0 overflow-hidden">
+                                <img src="{{ asset('assets/logo/logos.png')}}" class="w-full h-full object-cover" alt="photo">
+                            </div>
+                            <div class="flex flex-col justify-center gap-1">
+                                <p class="font-bold">{{ $testimonial->client->name }}</p>
+                                <p class="text-sm text-cp-light-grey">{{ $testimonial->client->occupation }}</p>
+                            </div>
+                        </div> -->
+                        <!-- <div class="flex flex-nowrap">
+                            <div class="w-6 h-6 flex shrink-0">
+                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
+                            </div>
+                            <div class="w-6 h-6 flex shrink-0">
+                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
+                            </div>
+                            <div class="w-6 h-6 flex shrink-0">
+                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
+                            </div>
+                            <div class="w-6 h-6 flex shrink-0">
+                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
+                            </div>
+                            <div class="w-6 h-6 flex shrink-0">
+                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
+                </div>
+            </div>
+            <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
+                <img src="{{ Storage::url($testimonial->thumbnail)}}" class="w-full h-full object-cover object-center" alt="thumbnail">
+            </div>
+        </div>
+        @empty
+        <p>belum ada data terbaru</p>
+        @endforelse
+    </div>
+</div>
+
+
+
+
+
+
 <!-- <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
     <div class="flex flex-col gap-[14px] items-center">
         <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
@@ -254,7 +322,7 @@
 <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between flex-between-sm-awards">
         <div class="flex flex-col gap-[14px]">
-            <p class="badge our-awards-badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR COMMITMENT</p>
+            <!-- <p class="badge our-awards-badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR COMMITMENT</p> -->
             <h2 class="our-awards-heading font-bold text-4xl leading-[45px]">Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.</h2>
         </div>
         <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white explore-more-btn">Explore More</a>

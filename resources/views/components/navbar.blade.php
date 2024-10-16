@@ -1,11 +1,11 @@
 <nav class="flex flex-wrap justify-evenly items-center md:justify-between  bg-white p-[20px_30px] rounded-[20px] gap-y-3 relative">
     <div class="flex items-center gap-3">
         <div class="flex shrink-0 h-[43px] overflow-hidden">
-            <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
+            <img src="assets/logo/logos.png" class="object-contain w-full h-full" alt="logo">
         </div>
         <div class="flex flex-col">
-            <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">ShaynaComp</p>
-            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
+            <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">Setia Primatama Semesta</p>
+            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Indonesia's Food Manufacturing</p>
         </div>
         <div class="md:hidden ">
             <button id="hamburger" class="text-3xl focus:outline-none">

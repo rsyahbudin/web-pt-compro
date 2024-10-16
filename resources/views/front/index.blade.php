@@ -14,11 +14,11 @@
                 </div>
                 <p class="font-semibold text-sm">{{ $hero->achievment }}</p> -->
             </div>
-            <div class="flex flex-col gap-[10px]">
+            <div class="flex flex-col gap-[10px] makeit-center-sm">
                 <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">{{$hero->heading}}</h1>
                 <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{$hero->subheading}}</p>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 makeit-center-sm">
                 <!-- <a href="#OurPrinciples" class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore Now</a> -->
                 <a href="#OurPrinciples" class="explore-now-btn bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore Now</a>
 
@@ -35,7 +35,7 @@
         @endforelse
 
     </div>
-    <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
+    <div class="warehouse-bg absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
         <img src="{{ asset('assets/backgrounds/warehouse.jpg')}}" class="object-cover w-full h-full" alt="banner">
     </div>
 </div>
@@ -55,10 +55,11 @@
 
 </div>
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-    <div class="flex items-center justify-between">
+    <!-- <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-[14px]"> -->
+    <div class="flex items-center justify-between flex-between-sm">
         <div class="flex flex-col gap-[14px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRODUCTS</p>
-            <h2 class="font-bold text-4xl leading-[45px]">We Provide Best Products <br> For Your Company</h2>
+            <p class="badge our-products-badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRODUCTS</p>
+            <h2 class="our-products-heading font-bold text-4xl leading-[45px]">We Provide Best Products <br> For Your Company</h2>
         </div>
         <a href="" class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
@@ -85,27 +86,6 @@
         @empty
             <p>belum ada data terbaru</p>
         @endforelse
-
-        <!-- @forelse ($principles as $principle)
-        <div class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
-            <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-                <img src="{{ Storage::url($principle->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
-            </div>
-            <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
-                <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                    <img src="{{ Storage::url($principle->icon)}}" class="w-full h-full object-contain" alt="icon">
-                </div>
-                <div class="flex flex-col gap-1">
-                    <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
-                    <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
-                </div>
-                <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
-            </div>
-        </div>
-        @empty
-        <p>belum ada data terbaru</p>
-        @endforelse -->
-
     </div>
 </div>
 
@@ -128,11 +108,11 @@
         </div>
     </div>
 </div> -->
-<!-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
+<div id="Products" class="container max-w-[1130px] mx-auto flex flex-col ">
 
     @forelse($products as $product)
     <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-        <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
+        <div class="w-[470px] h-[450px] flex shrink-0 overflow-hidden">
             <img src="{{ Storage::url($product->thumbnail)}}" class="w-full h-full object-contain" alt="thumbnail">
         </div>
         <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
@@ -148,7 +128,7 @@
     <p>belum ada data terbaru</p>
     @endforelse
 
-</div> -->
+</div>
 
 <!-- <div id="About" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
     @forelse($abouts as $about)
@@ -271,13 +251,13 @@
         @endforelse
     </div>
 </div> -->
- <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-    <div class="flex items-center justify-between">
+<div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+    <div class="flex items-center justify-between flex-between-sm-awards">
         <div class="flex flex-col gap-[14px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
-            <h2 class="font-bold text-4xl leading-[45px]">Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.</h2>
+            <p class="badge our-awards-badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR COMMITMENT</p>
+            <h2 class="our-awards-heading font-bold text-4xl leading-[45px]">Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.</h2>
         </div>
-        <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+        <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white explore-more-btn">Explore More</a>
     </div>
     <div class="awards-card-container grid justify-center">
         <div class="awards-card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">

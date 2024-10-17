@@ -841,6 +841,63 @@ video {
   z-index: 10;
 }
 
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card on hover */
+}
+
+.product-image {
+  transition: filter 0.3s ease; /* Smooth transition for filter effect */
+}
+
+.product-card:hover .product-image {
+  filter: blur(5px); /* Blurs the image on hover */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.product-card:hover .overlay {
+  opacity: 1; /* Shows the overlay on hover */
+}
+
+.overlay h5 {
+  color: white; /* White text for product name */
+  font-size: 1.25rem; /* Adjust the font size as needed */
+  text-align: center; /* Center align the text */
+}
+
+.modal-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content.scale-100 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* Ensure it's dark enough */
+}
+
 .z-40 {
   z-index: 40;
 }
@@ -879,6 +936,7 @@ video {
 .ms-auto {
   margin-inline-start: auto;
 }
+
 
 .mt-20 {
   margin-top: 5rem;

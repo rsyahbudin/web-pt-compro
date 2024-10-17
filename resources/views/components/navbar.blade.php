@@ -5,7 +5,7 @@
         </div>
         <div class="flex flex-col">
             <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">Setia Primatama Semesta</p>
-            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Indonesia's Food Manufacturing</p>
+            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Your Trusted Solution</p>
         </div>
         <div class="md:hidden ">
             <button id="hamburger" class="text-3xl focus:outline-none">
@@ -22,7 +22,7 @@
             <a href="{{ route('front.index') }}">Home</a>
         </li>
         <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="">Products</a>
+            <a href="{{route('front.product')}}">Products</a>
         </li>
         <li class="{{request()->routeIs('front.team') ? 'text-cp-light-grey' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="{{ route('front.team') }}">Company</a>

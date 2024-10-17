@@ -27,6 +27,9 @@ class StorePrincipleRequest extends FormRequest
             "subtitle" => ["required", 'string', 'max:255'],
             "thumbnail" => ["required", "image", "mimes:png,jpg,jpeg,webp"],
             "icon" => ["required", "image", "mimes:png,jpg,jpeg,webp"],
+            "keypoints" => ["required", "array"], // Ensure keypoints is an array
+            "keypoints.*.keypoint" => ["required", "string", "max:255"], // Validate each keypoint
+            "keypoints.*.manufacture" => ["required", "string", "max:255"],
         ];
     }
 }

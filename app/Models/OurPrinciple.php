@@ -16,4 +16,12 @@ class OurPrinciple extends Model
         'thumbnail',
         'icon',
     ];
+
+    /**
+     * Get the keypoints associated with the principle.
+     */
+    public function keypoints()
+    {
+        return $this->hasMany(Keypoint::class, 'our_principle_id'); // Ensure to use the correct model
+    }
 }

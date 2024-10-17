@@ -36,20 +36,35 @@ class OurPrincipleController extends Controller
     public function store(StorePrincipleRequest $request)
     {
         //
-        DB::transaction(function () use ($request){
+        DB::transaction(function () use ($request) {
+            // Validate the request data
             $validated = $request->validated();
-
-            if ($request -> hasFile('icon')){
-                $iconPath = $request -> file('icon') -> store('icons', 'public');
-                $validated['icon'] = $iconPath;
+        
+            // Handle icon file upload if it exists
+            if ($request->hasFile('icon')) {
+                $iconPath = $request->file('icon')->store('icons', 'public');
+                $validated['icon'] = $iconPath; // Store the path in validated data
             }
-
-            if ($request -> hasFile('thumbnail')){
-                $thumbnailPath = $request -> file('thumbnail') -> store('thumbnails', 'public');
-                $validated['thumbnail'] = $thumbnailPath;
+        
+            // Handle thumbnail file upload if it exists
+            if ($request->hasFile('thumbnail')) {
+                $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+                $validated['thumbnail'] = $thumbnailPath; // Store the path in validated data
             }
-
+        
+            // Create a new principle with validated data
             $newPrinciple = OurPrinciple::create($validated);
+        
+            // If there are keypoints, associate them with the new principle
+            if (!empty($validated['keypoints'])) {
+                foreach ($validated['keypoints'] as $keypoint) {
+                    $newPrinciple->keypoints()->create([
+                        'keypoint' => $keypoint['keypoint'], // Assuming keypoint is an array with 'keypoint' field
+                        'manufacture' => $keypoint['manufacture'], // Add the 'manufacture' field
+                        'our_principle_id' => $newPrinciple->id // Ensure the foreign key is set
+                    ]);
+                }
+            }
         });
 
         return redirect()->route('admin.principles.index');

@@ -23,7 +23,7 @@
                 <a href="{{ route('front.index') }}" class="{{ request()->routeIs('front.index') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">Home</a>
             </li>
             <li>
-                <a href="{{ route('front.product') }}" class="font-semibold hover:text-blue-500 transition duration-300">Products</a>
+                <a href="{{ route('front.product') }}" class="{{ request()->routeIs('front.product') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold hover:text-blue-500 transition duration-300">Products</a>
             </li>
             <li>
                 <a href="{{ route('front.team') }}" class="{{ request()->routeIs('front.team') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">Company</a>

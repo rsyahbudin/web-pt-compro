@@ -261,18 +261,15 @@
                 </div>
             </div>
             <div class="flex gap-4">
-                <a href="https://wa.me/6282231545981?text=Halo%20Elevasi,%20saya%20mau%20bertanya" target="_blank" class="w-6 h-6 flex shrink-0 ml-4 md:ml-0"> <!-- Added ml-4 for left margin on mobile -->
+                <a href="https://wa.me/6281398351707?text=Halo%20PT%20Setia%20Primatama%20Semesta,%20saya%20mau%20bertanya" target="_blank" class="w-6 h-6 flex shrink-0 ml-4 md:ml-0"> <!-- Added ml-4 for left margin on mobile -->
                     <img src="{{ asset('assets/icons/whatsapp.svg')}}" class="w-full h-full object-contain" alt="whatsapp">
-                </a>
-                <a href="https://www.instagram.com/elevasi.kontraktor/" target="_blank" class="w-6 h-6 flex shrink-0  md:ml-0"> <!-- Added ml-4 for left margin on mobile -->
-                    <img src="{{ asset('assets/icons/instagram.svg')}}" class="w-full h-full object-contain" alt="instagram">
                 </a>
             </div>
         </div>
 
         <div class="flex flex-col items-start md:items-end gap-4 pl-4 md:pl-0"> <!-- Add pl-4 for left padding on mobile -->
             <h2 class="font-bold text-lg text-left md:text-right">Office</h2>
-            <p class="text-gray-400 text-left md:text-right max-w-[250px]">Taman Tekno Bangunan Multi Guna Blok H 2 No.5 BSD Sektor XI - Tangerang 15314</p>
+            <p class="text-gray-400 text-left md:text-right max-w-[250px]">PT. Setia Primatama Semesta Taman Tekno Bangunan Multi Guna Blok H 2 No.5 BSD Sektor XI - Tangerang 15314</p>
             <h2 class="font-bold text-lg text-left md:text-right">Contact</h2>
             <p class="text-gray-400 text-left md:text-right max-w-[250px]">(021) 756 3685 / 756 3663 / 756 3701 / 756 2186</p>
         </div>

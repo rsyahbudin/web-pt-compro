@@ -63,8 +63,7 @@ class FrontController extends Controller
 
     public function product()
     {
-        $testimonials = Testimonial::take(4)->get();
         $principles = OurPrinciple::take(10)->get();
-        return view('front.product', compact('testimonials', 'principles'));
+        return view('front.product', compact( 'principles'));
     }
 }

@@ -27,6 +27,9 @@ class UpdatePrincipleRequest extends FormRequest
             "subtitle" => ["required", 'string', 'max:255'],
             "thumbnail" => ["sometimes", "image", "mimes:png,jpg,jpeg,webp"],
             "icon" => ["sometimes", "image", "mimes:png,jpg,jpeg,webp"],
+            "keypoints" => ["sometimes", "array"], // Ensure keypoints is an array
+            "keypoints.*.keypoint" => ["sometimes", "string", "max:255"], // Validate each keypoint
+            "keypoints.*.manufacture" => ["sometimes", "string", "max:255"],
         ];
     }
 }

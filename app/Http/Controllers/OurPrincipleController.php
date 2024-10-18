@@ -92,26 +92,44 @@ class OurPrincipleController extends Controller
      * Update the specified resource in storage.
      */
     public function update(UpdatePrincipleRequest $request, OurPrinciple $principle)
-    {
-        //
-        DB::transaction(function () use ($request, $principle){
-            $validated = $request->validated();
+{
+    DB::transaction(function () use ($request, $principle) {
+        // Validate the request data
+        $validated = $request->validated();
 
-            if ($request -> hasFile('icon')){
-                $iconPath = $request -> file('icon') -> store('icons', 'public');
-                $validated['icon'] = $iconPath;
+        // Handle icon file upload if it exists
+        if ($request->hasFile('icon')) {
+            $iconPath = $request->file('icon')->store('icons', 'public');
+            $validated['icon'] = $iconPath;
+        }
+
+        // Handle thumbnail file upload if it exists
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+            $validated['thumbnail'] = $thumbnailPath;
+        }
+
+        // Update the principle with validated data
+        $principle->update($validated);
+
+        // Update the keypoints
+        if (!empty($validated['keypoints'])) {
+            // Delete all existing keypoints before inserting new ones
+            $principle->keypoints()->delete();
+
+            // Insert new keypoints
+            foreach ($validated['keypoints'] as $keypointData) {
+                $principle->keypoints()->create([
+                    'keypoint' => $keypointData['keypoint'], // Assuming 'keypoint' is a key in the array
+                    'manufacture' => $keypointData['manufacture'], // Assuming 'manufacture' is a key in the array
+                ]);
             }
+        }
+    });
 
-            if ($request -> hasFile('thumbnail')){
-                $thumbnailPath = $request -> file('thumbnail') -> store('thumbnails', 'public');
-                $validated['thumbnail'] = $thumbnailPath;
-            }
+    return redirect()->route('admin.principles.index');
+}
 
-            $principle -> update($validated);
-        });
-
-        return redirect()->route('admin.principles.index');
-    }
 
     /**
      * Remove the specified resource from storage.

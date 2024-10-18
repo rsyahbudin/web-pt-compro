@@ -279,7 +279,7 @@
     </div>
 
     <div class="absolute -bottom-[135px] w-full">
-        <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">ELEVASI</p>
+        <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">SPS</p>
     </div>
 </footer>
 

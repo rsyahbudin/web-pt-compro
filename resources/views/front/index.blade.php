@@ -261,10 +261,11 @@
                 </div>
             </div>
             <div class="flex gap-4">
-                <a href="https://wa.me/6281398351707?text=Halo%20PT%20Setia%20Primatama%20Semesta,%20saya%20mau%20bertanya" target="_blank" class="w-6 h-6 flex shrink-0 ml-4 md:ml-0"> <!-- Added ml-4 for left margin on mobile -->
-                    <img src="{{ asset('assets/icons/whatsapp.svg')}}" class="w-full h-full object-contain" alt="whatsapp">
+                <a href="https://wa.link/6tn09n" target="_blank" class="w-6 h-6 flex shrink-0 ml-4 md:ml-0 cursor-pointer" style="touch-action: manipulation;">
+                    <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain" alt="whatsapp">
                 </a>
             </div>
+
         </div>
 
         <div class="flex flex-col items-start md:items-end gap-4 pl-4 md:pl-0"> <!-- Add pl-4 for left padding on mobile -->

@@ -276,9 +276,12 @@
         </div>
     </div>
 
-    <div class="absolute -bottom-[135px] w-full">
-        <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">SPS</p>
-    </div>
+    <div class="absolute -bottom-[135px] w-full flex justify-center">
+    <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">
+        SPS
+    </p>
+</div>
+
 </footer>
 
 <div id="video-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">

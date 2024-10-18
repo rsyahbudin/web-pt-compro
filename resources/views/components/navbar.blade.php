@@ -1,65 +1,55 @@
-<nav class="flex flex-wrap justify-evenly items-center md:justify-between  bg-white p-[20px_30px] rounded-[20px] gap-y-3 relative">
-    <div class="flex items-center gap-3">
-        <div class="flex shrink-0 h-[43px] overflow-hidden">
-            <img src="assets/logo/logos.png" class="object-contain w-full h-full" alt="logo">
+<nav class="bg-white p-5 rounded-2xl shadow-md">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
+        <!-- Logo and Company Info -->
+        <div class="flex items-center gap-3">
+            <div class="h-11 w-11 overflow-hidden">
+                <img src="assets/logo/logos.png" class="object-contain w-full h-full" alt="logo">
+            </div>
+            <div class="flex flex-col">
+                <p class="font-extrabold text-xl leading-7">Setia Primatama Semesta</p>
+                <p class="text-sm text-gray-500">Your Trusted Solution</p>
+            </div>
         </div>
-        <div class="flex flex-col">
-            <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">Setia Primatama Semesta</p>
-            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Your Trusted Solution</p>
-        </div>
-        <div class="md:hidden ">
+        <!-- Hamburger Icon (Mobile View) -->
+        <div class="md:hidden">
             <button id="hamburger" class="text-3xl focus:outline-none">
-                &#9776; <!-- Hamburger icon (three horizontal lines) -->
+                &#9776; <!-- Hamburger icon -->
             </button>
         </div>
-    </div>
 
-    <!-- Hamburger Icon (hidden on md and larger screens) -->
+        <!-- Navigation Links -->
+        <ul id="navLinks" class="hidden w-full flex-col items-center text-center gap-5 mt-5 md:flex md:flex-row md:w-auto md:gap-8 md:mt-0">
+            <li>
+                <a href="{{ route('front.index') }}" class="{{ request()->routeIs('front.index') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">Home</a>
+            </li>
+            <li>
+                <a href="{{ route('front.product') }}" class="font-semibold hover:text-blue-500 transition duration-300">Products</a>
+            </li>
+            <li>
+                <a href="{{ route('front.team') }}" class="{{ request()->routeIs('front.team') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">Company</a>
+            </li>
+            <li>
+                <a href="#" class="font-semibold hover:text-blue-500 transition duration-300">Blog</a>
+            </li>
+            <li>
+                <a href="{{ route('front.about') }}" class="{{ request()->routeIs('front.about') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">About</a>
+            </li>
+            <!-- Mobile Get a Quote Button -->
+            <li class="md:hidden w-full mt-5">
+                <a href="{{ route('front.appointment') }}" class="bg-blue-600 text-white font-bold rounded-xl p-3 w-full text-center hover:shadow-lg transition duration-300">Get a Quote</a>
+            </li>
+        </ul>
 
-    <!-- Responsive Navigation Links -->
-    <ul id="navLinks" class="hidden flex-col items-center justify-center gap-5 mt-4 min-h-screen md:flex md:gap-[30px] md:flex-wrap md:flex-row">
-        <li class="{{request()->routeIs('front.index') ? 'text-cp-light-grey' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="{{ route('front.index') }}">Home</a>
-        </li>
-        <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="{{route('front.product')}}">Products</a>
-        </li>
-        <li class="{{request()->routeIs('front.team') ? 'text-cp-light-grey' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="{{ route('front.team') }}">Company</a>
-        </li>
-        <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="">Blog</a>
-        </li>
-        <li class="{{request()->routeIs('front.about') ? 'text-cp-light-grey' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300 mb-5">
-            <a href="{{route('front.about')}}">About</a>
-        </li>
-        <!-- Add Get a Quote button inside the nav links for mobile view -->
-        <li class="mt-5 md:hidden bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">
-            <a href="{{route('front.appointment')}}" class="">Get a Quote</a>
-        </li>
-    </ul>
-
-    <!-- Call to Action Button (hidden on small screens) -->
-    <div class="hidden md:flex">
-        <a href="{{route('front.appointment')}}" class="  bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get a Quote</a>
+        <!-- Get a Quote Button for Desktop -->
+        <div class="hidden md:flex">
+            <a href="{{ route('front.appointment') }}" class="bg-blue-600 text-white font-bold rounded-xl p-3 hover:shadow-lg transition duration-300">Get a Quote</a>
+        </div>
     </div>
 </nav>
 
 <script>
-    // Get the hamburger button and navigation links
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
-    // Function to reset navbar state
-    function resetNavbarState() {
-        navLinks.classList.add('hidden'); // Ensure the navbar starts hidden on mobile
-    }
-
-    // Toggle the visibility of the navigation links when hamburger is clicked
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('hidden');
+    // JavaScript for the hamburger menu toggle
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('hidden');
     });
-
-    // Reset the navbar state when the page loads
-    window.onload = resetNavbarState;
 </script>

@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS for Carousel Indicators */
+.indicator-button {
+    border: none; /* Remove default button styles */
+    background: transparent; /* Make the button background transparent */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 0; /* Remove default padding */
+}
+
+.indicator-dot {
+    width: 10px; /* Width of the indicator dot */
+    height: 5px; /* Height of the indicator dot */
+    border-radius: 50%; /* Make the dots circular */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Add spacing between indicators */
+.carousel-indicator {
+    margin-top: 10px; /* Add space between the indicators and content above */
+}
+
+.carousel-arrow {
+    z-index: 10; /* Ensure arrows are above other content */
+    width: 40px; /* Width of the arrow button */
+    height: 40px; /* Height of the arrow button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
+}
+
+.carousel-arrow img {
+    width: 100%; /* Adjust arrow icon size */
+    height: 100%; /* Maintain aspect ratio */
+}
+
+.left-arrow, .right-arrow {
+    z-index: 10; /* Ensure arrows are on top */
+    width: 40px; /* Set width for arrows */
+    height: 40px; /* Set height for arrows */
+    display: flex; /* Center align arrow icons */
+    justify-content: center; /* Center align arrow icons */
+    align-items: center; /* Center align arrow icons */
+}
+
+/* Optional: Add hover effect for arrows */
+.left-arrow:hover, .right-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}

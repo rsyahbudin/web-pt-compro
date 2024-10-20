@@ -80,6 +80,7 @@
         @endforelse
     </div>
 </div>
+<x-footer />
 
 
 
@@ -87,49 +88,7 @@
 @endsection
 
 @push ('after-scripts')
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Select all modal triggers
-        const modalTriggers = document.querySelectorAll('[id^="openModal"]');
 
-        modalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function() {
-                const modalId = trigger.id.replace('openModal', 'productModal');
-                const modal = document.getElementById(modalId);
-                modal.classList.remove('hidden'); // Show the modal
-                modal.classList.add('flex'); // Make it a flex container to center content
-            });
-        });
-
-        // Select all close buttons
-        const closeModalButtons = document.querySelectorAll('.close-modal');
-
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const modal = button.closest('.modal-content').parentElement; // Get the parent modal
-                closeModal(modal); // Close the modal
-            });
-        });
-
-        // Close modal when clicking outside the modal content
-        window.addEventListener('click', function(event) {
-            modalTriggers.forEach(trigger => {
-                const modalId = trigger.id.replace('openModal', 'productModal');
-                const modal = document.getElementById(modalId);
-                // Check if the click was outside the modal content
-                if (event.target === modal) {
-                    closeModal(modal); // Close the modal
-                }
-            });
-        });
-
-        // Function to close the modal
-        function closeModal(modal) {
-            modal.classList.add('hidden'); // Hide the modal
-            modal.classList.remove('flex'); // Remove flex display
-        }
-    });
-</script> -->
 <script>
     function openModal(id) {
         document.getElementById(`productModal${id}`).classList.remove('hidden');

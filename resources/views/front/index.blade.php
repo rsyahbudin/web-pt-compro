@@ -7,10 +7,10 @@
 
         @forelse ($hero_section as $hero)
         <input type="hidden" name="path_video" id="path_video" value="{{$hero->path_video}}">
-        <div id="Hero" class="flex flex-col gap-6 mt-10 pb-16 sm:mt-20 sm:pb-20 text-left relative">
+        <div id="Hero" class="flex flex-col gap-6 mt-10 pb-16 sm:mt-20 sm:pb-20 text-left relative" data-aos="fade-up" data-aos-duration="1000">
             <!-- Mobile overlay to darken the background -->
 
-            <div class="relative flex flex-col gap-4 sm:text-left text-center">
+            <div class="relative flex flex-col gap-4 sm:text-left text-center" data-aos="zoom-in" data-aos-duration="1000">
                 <h1 class="font-extrabold text-2xl leading-snug text-white sm:text-black sm:text-4xl sm:leading-tight sm:max-w-[536px] text-shadow-lg">
                     {{$hero->heading}}
                 </h1>
@@ -18,12 +18,12 @@
                     {{$hero->subheading}}
                 </p>
             </div>
-            <div class="relative flex flex-col items-center gap-4 sm:flex-row">
+            <div class="relative flex flex-col items-center gap-4 sm:flex-row" data-aos="fade-right" data-aos-duration="1000">
                 <a href="#OurPrinciples" class="bg-red-600 py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 font-bold text-white text-base sm:text-lg">
                     Explore Now
                 </a>
 
-                <button class="bg-blue-600 py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 font-bold text-white text-base sm:text-lg flex items-center gap-2" onclick="{modal.show()}">
+                <button class="bg-blue-600 py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 font-bold text-white text-base sm:text-lg flex items-center gap-2" onclick="{modal.show()}" data-aos="fade-left" data-aos-duration="1000">
                     <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-5 h-5" alt="icon">
                     <span>Watch Video</span>
                 </button>
@@ -33,27 +33,31 @@
         <p class="text-lg">Belum ada data terbaru</p>
         @endforelse
     </div>
-    <div class="warehouse-bg absolute w-full h-full top-0 right-0 overflow-hidden z-0 sm:w-[43%]">
+    <div class="warehouse-bg absolute w-full h-full top-0 right-0 overflow-hidden z-0 sm:w-[43%]" data-aos="fade-in" data-aos-duration="1000">
         <div class="absolute inset-0 bg-black opacity-50 sm:hidden"></div>
         <img src="{{ asset('assets/backgrounds/warehouseori.jpg') }}" class="object-cover w-full h-full" alt="banner">
     </div>
 </div>
-<div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-    <h2 class="font-bold text-lg">Trusted by 500+ Leading Food and Pharmaceutical Manufacturers Across Indonesia</h2>
+
+<div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20" data-aos="fade-up">
+    <h2 class="font-bold text-lg" data-aos="fade-in" data-aos-delay="200">
+        Trusted by 500+ Leading Food and Pharmaceutical Manufacturers Across Indonesia
+    </h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
         @forelse ($clients as $client)
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
             <div class="overflow-hidden h-9">
                 <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
             </div>
         </div>
         @empty
-        <p>belum ada data terbaru</p>
+        <p data-aos="fade-in" data-aos-delay="400">belum ada data terbaru</p>
         @endforelse
     </div>
 </div>
-<div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-20">
-    <div class="flex flex-col items-center md:flex-row md:items-start justify-between">
+
+<div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-20" data-aos="fade-up">
+    <div class="flex flex-col items-center md:flex-row md:items-start justify-between" data-aos="fade-right">
         <div class="flex-grow text-center md:text-left">
             <span class="bg-blue-500 text-white inline-block p-3 rounded-full uppercase font-bold text-sm">OUR PRODUCTS</span>
 
@@ -62,36 +66,36 @@
             </h2>
         </div>
 
-        <a href="#" class="bg-red-600 py-2 px-4 rounded-xl font-bold text-white mt-4 md:mt-0 md:ml-4">Explore More</a>
+        <a href="#" class="bg-red-600 py-2 px-4 rounded-xl font-bold text-white mt-4 md:mt-0 md:ml-4" data-aos="fade-left" data-aos-delay="200">Explore More</a>
     </div>
 
-
-    <div class="flex flex-wrap items-start gap-6 justify-center">
+    <div class="flex flex-wrap items-start gap-6 justify-center" data-aos="fade-up" data-aos-delay="300">
         @forelse ($principles as $principle)
-        <div class="card w-full sm:w-[356px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300 shadow-lg mb-6 h-[450px]">
+        <div class="card w-full sm:w-[356px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300 shadow-lg mb-6 h-[450px]" data-aos="zoom-in" data-aos-delay="400">
             <div class="h-[200px] flex shrink-0 overflow-hidden">
                 <img src="{{ Storage::url($principle->thumbnail) }}" class="object-cover object-center w-full h-full" alt="thumbnail">
             </div>
             <div class="flex flex-col p-4 gap-2 relative z-10 flex-grow">
                 <p class="font-bold text-xl leading-6 text-black">{{ $principle->name }}</p>
-                <p class="leading-6 text-gray-700 flex-grow">{{ $principle->subtitle }}</p> <!-- Use flex-grow to allow the subtitle to expand -->
-                <a href="#" class="font-semibold text-cp-dark-blue hover:underline mt-auto">Learn More</a> <!-- mt-auto to push Learn More button down -->
+                <p class="leading-6 text-gray-700 flex-grow">{{ $principle->subtitle }}</p>
+                <a href="#" class="font-semibold text-cp-dark-blue hover:underline mt-auto">Learn More</a>
             </div>
         </div>
         @empty
-        <p class="text-center text-gray-500">Belum ada data terbaru</p>
+        <p class="text-center text-gray-500" data-aos="fade-in" data-aos-delay="500">Belum ada data terbaru</p>
         @endforelse
     </div>
 </div>
-<div id="Teams" class="bg-gray-100 w-full py-20 px-4 mt-20">
+
+<div id="Teams" class="bg-gray-100 w-full py-20 px-4 mt-20" data-aos="fade-up">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-8 items-center">
-        <div class="flex flex-col gap-4 items-center">
+        <div class="flex flex-col gap-4 items-center" data-aos="fade-up">
             <p class="bg-blue-500 text-white px-4 py-2 rounded-full uppercase font-bold text-sm">OUR CORE VALUE</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center text-gray-800">These Are The Core Values <br> Upheld By Our Company.</h2>
         </div>
         <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full">
             @forelse($teams as $team)
-            <div class="card bg-white flex flex-col h-full items-center p-8 gap-4 rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300">
+            <div class="card bg-white flex flex-col h-full items-center p-8 gap-4 rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
                 <div class="w-[100px] h-[100px] flex items-center justify-center rounded-full overflow-hidden bg-gray-200">
                     <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full" alt="photo">
                 </div>
@@ -101,13 +105,13 @@
                 </div>
             </div>
             @empty
-            <p class="text-center text-gray-500">Belum ada data terbaru</p>
+            <p class="text-center text-gray-500" data-aos="fade-in">Belum ada data terbaru</p>
             @endforelse
-            <!-- <a href="{{route('front.team')}}" class="bg-red-600 text-white rounded-xl py-2 px-4 mt-6 col-span-full text-center hover:bg-red-700 transition-all">View All</a> -->
         </div>
     </div>
 </div>
-<div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
+
+<div id="Testimonials" class="w-full flex flex-col items-center mt-20" data-aos="fade-up">
     <div class="main-carousel w-full relative">
         @forelse($testimonials as $testimonial)
         <div class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
@@ -138,10 +142,11 @@
             </div>
         </div>
         @empty
-        <p>Belum ada data terbaru</p>
+        <p data-aos="fade-in" class="text-center text-gray-500">Belum ada data terbaru</p>
         @endforelse
     </div>
 </div>
+
 <div id="Awards" class="container max-w-7xl mx-auto flex flex-col gap-8 mt-20 px-4">
     <div class="flex flex-col md:flex-row items-center justify-between">
         <div class="flex flex-col gap-4">
@@ -155,7 +160,7 @@
     </div>
 
     <div class="awards-card-container grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+        <div class=" bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" >
             <div class="flex shrink-0">
                 <img src="{{ asset('assets/icons/values.jpg')}}" alt="Vision icon" class="w-16 h-14">
             </div>
@@ -199,6 +204,7 @@
         </div>
     </div>
 </div>
+
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-4 mt-20">
     <div class="container max-w-[1000px] mx-auto">
         <div class="flex flex-col lg:flex-row gap-10 items-center">

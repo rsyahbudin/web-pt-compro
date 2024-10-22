@@ -1,233 +1,106 @@
 @extends ('front.layouts.app')
 @section ('content')
 
-<div id="header" class="bg-[#F6F7FA] relative h-[700px] -mb-[488px]">
-    <div class="container max-w-[1130px] mx-auto relative pt-10  z-10">
-        <x-navbar/>
-    </div>
-</div>
-<div id="Contact" class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-[50px] relative z-10">
-    <div class="flex flex-col mt-20 gap-[50px]">
-        <div class="breadcrumb flex items-center gap-[30px]">
-            <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
-            <span class="text-cp-light-grey">/</span>
-            <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Product</p>
-            <span class="text-cp-light-grey">/</span>
-            <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Appointment</p>
-        </div>
-        <h1 class="font-extrabold text-4xl leading-[45px]">We Help You to Build Awesome Project</h1>
-        <div class="flex flex-col gap-5">
-            <div class="flex items-center gap-[10px]">
-                <div class="w-6 h-6 flex shrink-0">
-                    <img src="assets/icons/global.svg" alt="icon">
-                </div>
-                <p class="text-cp-dark-blue font-semibold">No 96, Anggapati Jakarta</p>
-            </div>
-            <div class="flex items-center gap-[10px]">
-                <div class="w-6 h-6 flex shrink-0">
-                    <img src="assets/icons/call.svg" alt="icon">
-                </div>
-                <p class="text-cp-dark-blue font-semibold">(021) 22081996</p>
-            </div>
-            <div class="flex items-center gap-[10px]">
-                <div class="w-6 h-6 flex shrink-0">
-                    <img src="assets/icons/monitor-mobbile.svg" alt="icon">
-                </div>
-                <p class="text-cp-dark-blue font-semibold">shaynacomp.com</p>
-            </div>
-        </div>
-    </div>
-    <form action="{{route('front.appointment_store')}}" method="POST" class="flex flex-col p-[30px] rounded-[20px] gap-[18px] bg-white shadow-[0_10px_30px_0_#D1D4DF40] w-full md:w-[700px] shrink-0">
-        @csrf
-        <div class="flex items-center gap-[18px]">
-            <div class="flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Complete Name</p>
-                <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
-                    <div class="w-[18px] h-[18px] flex shrink-0">
-                        <img src="assets/icons/profile.svg" alt="icon">
-                    </div>
-                    <input type="text" name="name" id="" class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full" placeholder="Write your complete name" required>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Email Address</p>
-                <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
-                    <div class="w-[18px] h-[18px] flex shrink-0">
-                        <img src="assets/icons/sms.svg" alt="icon">
-                    </div>
-                    <input type="email" name="email" id="" class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full" placeholder="Write your email address" required>
-                </div>
-            </div>
-        </div>
-        <div class="flex items-center gap-[18px]">
-            <div class="flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Phone Number</p>
-                <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
-                    <div class="w-[18px] h-[18px] flex shrink-0">
-                        <img src="assets/icons/call-black.svg" alt="icon">
-                    </div>
-                    <input type="tel" name="phone_number" id="" class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full" placeholder="Write your phone number" required>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Meeting Date</p>
-                <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white relative">
-                    <div class="w-[18px] h-[18px] flex shrink-0">
-                        <img src="assets/icons/calendar.svg" alt="icon">
-                    </div>
-                    <button type="button" id="dateButton" class="p-0 bg-transparent w-full text-left border-none outline-none">Choose the date</button>
-                    <input type="date" name="meeting_at" id="dateInput" class="absolute opacity-0 -z-10">
-                </div>
-            </div>
-        </div>
-        <div class="flex items-center gap-[18px]">
-            <div class="flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Your Interest</p>
-                <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
-                    <div class="w-[18px] h-[18px] flex shrink-0">
-                        <img src="assets/icons/building-4-black.svg" alt="icon">
-                    </div>
-                    <select name="product_id" id="" class="appearance-none outline-none w-full invalid:font-normal font-semibold px-[10px] -mx-[10px]" required>
-                        <option value="" hidden>Choose a project</option>
-                        @foreach($products as $product)
-                        <option value="{{$product->id}}">{{$product->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class=" flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Budget Available</p>
-                <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
-                    <div class="w-[18px] h-[18px] flex shrink-0">
-                        <img src="assets/icons/dollar-square.svg" alt="icon">
-                    </div>
-                    <input type="number" name="budget" id="" class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full" placeholder="What is your budget" required>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col gap-2 flex w-full">
-            <p class="font-semibold">Project Brief</p>
-            <div class="flex gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
-                <div class="w-[18px] h-[18px] flex shrink-0 mt-[3px]">
-                    <img src="assets/icons/message-text.svg" alt="icon">
-                </div>
-                <textarea name="brief" id="" rows="6" class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full resize-none" placeholder="Tell us the project brief"></textarea>
-            </div>
-        </div>
-        <button type="submit" class="bg-cp-dark-blue p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book Appointment</button>
-    </form>
-</div>
-<div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20 relative z-10">
-    <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
-    <div class="logo-container flex flex-wrap gap-5 justify-center">
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-44.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
-    <div class="flex flex-col gap-[14px] items-center">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
-        <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company</h2>
-    </div>
-    <div class="main-carousel w-full">
+<div id="header" class="relative">
+    <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
+        <x-navbar />
+        <div class="flex flex-col gap-[40px] items-center py-10">
 
-        @forelse($testimonials as $testimonial)
-        <div class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-            <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                <div class="flex flex-col gap-[30px]">
-                    <div class="h-9 overflow-hidden">
-                        <img src="{{ Storage::url($testimonial->client->logo)}}" class="object-contain" alt="icon">
-                    </div>
-                    <div class="relative pt-[27px] pl-[30px]">
-                        <div class="absolute top-0 left-0">
-                            <img src="{{ asset('assets/icons/quote.svg')}}" alt="icon">
-                        </div>
-                        <p class="font-semibold text-2xl leading-[46px] relative z-10">{{ $testimonial->message }}</p>
-                    </div>
-                    <div class="flex items-center justify-between pl-[30px]">
-                        <div class="flex items-center gap-6">
-                            <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                <img src="{{ Storage::url($testimonial->client->avatar)}}" class="w-full h-full object-cover" alt="photo">
-                            </div>
-                            <div class="flex flex-col justify-center gap-1">
-                                <p class="font-bold">{{ $testimonial->client->name }}</p>
-                                <p class="text-sm text-cp-light-grey">{{ $testimonial->client->occupation }}</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-nowrap">
-                            <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
-                            </div>
-                            <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
-                            </div>
-                            <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
-                            </div>
-                            <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
-                            </div>
-                            <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{ asset('assets/icons/Star-rating.svg')}}" alt="star">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                </div>
-            </div>
-            <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                <img src="{{ Storage::url($testimonial->thumbnail)}}" class="w-full h-full object-cover object-center" alt="thumbnail">
-            </div>
         </div>
-        @empty
-        <p>belum ada data terbaru</p>
-        @endforelse
     </div>
 </div>
+
+<div id="Contact" class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-12 relative z-10">
+    <div class="flex flex-col gap-12 w-full xl:w-1/2">
+        <div class="breadcrumb flex items-center gap-4">
+            <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
+            <span class="text-cp-light-grey">/</span>
+            <p class="text-gray-600">Product</p>
+            <span class="text-cp-light-grey">/</span>
+            <p class="text-cp-black font-semibold">Appointment</p>
+        </div>
+        <h1 class="text-5xl font-bold leading-tight text-gray-800">We Help You to Build Awesome Projects</h1>
+        <div class="space-y-4">
+            <div class="flex items-center gap-2">
+                <img src="assets/icons/global.svg" alt="Location Icon" class="w-6 h-6">
+                <p class="text-cp-dark-blue font-semibold">Kawasan Bangunan Multi Guna, Taman Tekno BSD City, Blk. H2 Jl. Sektor 11 No.5, Setu, Kec. Setu, Kota Tangerang Selatan, Banten 15314</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <img src="assets/icons/call.svg" alt="Phone Icon" class="w-6 h-6">
+                <p class="text-cp-dark-blue font-semibold">(021) 7563713</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg>
+                <p class="text-cp-dark-blue font-semibold">
+                    <a href="mailto:alghifari@setiaprimatamas.com" class="hover:underline">alghifari@setiaprimatamas.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <form class="w-full xl:w-[700px] bg-white shadow-lg p-10 rounded-2xl space-y-8">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Contact Us</h2>
+
+    @csrf
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <label for="name" class="block font-medium mb-2 text-gray-700">Complete Name</label>
+            <div class="flex items-center ">
+                <img src="assets/icons/profile.svg" alt="Profile Icon" class="w-5 h-5 mr-3">
+                <input type="text" name="name" id="name" class="w-full p-2 bg-transparent outline-none placeholder-gray-500 rounded-md" placeholder="Your complete name" required>
+            </div>
+        </div>
+        <div>
+            <label for="company_name" class="block font-medium mb-2 text-gray-700">Company Name</label>
+            <div class="flex items-center ">
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512" class="w-5 h-5 mr-3">
+                    <path d="M64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l80 0 0-64c0-26.5 21.5-48 48-48s48 21.5 48 48l0 64 80 0c8.8 0 16-7.2 16-16l0-384c0-8.8-7.2-16-16-16L64 48zM0 64C0 28.7 28.7 0 64 0L320 0c35.3 0 64 28.7 64 64l0 384c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm88 40c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48zM232 88l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48c0-8.8 7.2-16 16-16zM88 232c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48zm144-16l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48c0-8.8 7.2-16 16-16z" />
+                </svg>
+                <input type="text" name="company_name" id="company_name" class="w-full p-2 bg-transparent outline-none placeholder-gray-500 rounded-md" placeholder="Your company name" required>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <label for="email" class="block font-medium mb-2 text-gray-700">Email Address</label>
+            <div class="flex items-center ">
+                <img src="assets/icons/sms.svg" alt="Email Icon" class="w-5 h-5 mr-3">
+                <input type="email" name="email" id="email" class="w-full p-2 bg-transparent outline-none placeholder-gray-500 rounded-md" placeholder="Your email address" required>
+            </div>
+        </div>
+        <div>
+            <label for="product_id" class="block font-medium mb-2 text-gray-700">Your Interest</label>
+            <div class="flex items-center ">
+                <img src="assets/icons/building-4-black.svg" alt="Interest Icon" class="w-5 h-5 mr-3">
+                <select name="product_id" id="product_id" class="w-full p-2 bg-transparent outline-none rounded-md" required>
+                    <option value="" disabled selected>Choose a project</option>
+                    @foreach ($principles as $principle)
+                    <option value="{{ $principle->id }}">{{ $principle->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <label for="brief" class="block font-medium mb-2 text-gray-700">Brief</label>
+        <div class="flex ">
+            <img src="assets/icons/message-text.svg" alt="Message Icon" class="w-5 h-5 mr-3 mt-1">
+            <textarea name="brief" id="brief" rows="4" class="w-full p-2 bg-transparent outline-none resize-none placeholder-gray-500 rounded-md" placeholder="Tell us about your project"></textarea>
+        </div>
+    </div>
+
+    <button type="button" onclick="sendEmail()" class="w-full py-3 bg-red-600 text-white font-semibold rounded-full hover:shadow-lg transition duration-300">Book Appointment</button>
+</form>
+
+
+
+
+</div>
+
 <x-footer />
 
 @endsection
@@ -235,8 +108,5 @@
 @push ('after-scripts')
 <script src="js/contact-form.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<!-- JavaScript -->
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
-<script src="js/carousel.js"></script>
+
 @endpush

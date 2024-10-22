@@ -6,162 +6,114 @@
         <x-navbar />
         <div class="flex flex-col gap-[50px] items-center py-20">
             <div class="breadcrumb flex items-center justify-center gap-[30px]">
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
+                <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
                 <span class="text-cp-light-grey">/</span>
                 <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">About Us</p>
             </div>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">Since Beginning We Only <br> Want to Make World Better</h2>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4">
+        <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10">
+            <!-- <h3 class="text-3xl font-bold mb-4 text-center text-blue-950">About Us</h3> -->
+            <p class="text-gray-800 text-center leading-relaxed">
+                PT Setia Primatama Semesta is located in Tangerang, Indonesia. A company that supplies chemicals mostly for food additives and nutritions to Indonesia's food manufacturing sector. We are a sister company with PT Setia Tritunggal Inti Artha that mainly focuses on pharmaceuticals for more than 10 years of operation.
+            </p>
+            <p class="text-gray-800 text-center leading-relaxed mt-2">
+                The company is aiming to serve the best quality ingredients, including the competitive price, and providing great service towards the industry. We are committed to being your raw material ingredients partner solution within the range of product development.
+            </p>
         </div>
     </div>
 </div>
-<div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
 
-    @forelse($abouts as $about)
-    <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-        <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
-            <img src="{{Storage::url($about->thumbnail)}}" class="w-full h-full object-contain" alt="thumbnail">
+<!-- Map Section -->
+<div id="Map" class="container max-w-[1130px] mx-auto mt-8 px-4">
+    <div class="map-container rounded-lg overflow-hidden shadow-lg">
+        <iframe
+            class="w-full h-[400px] rounded-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.492370344165!2d106.67201287540472!3d-6.330191961940083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e53ccf25a49b%3A0x4851bdd34fc134cd!2sPT%20Setia%20Primatama%20Semesta!5e0!3m2!1sen!2sid!4v1729567352167!5m2!1sen!2sid"
+            frameborder="0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0">
+        </iframe>
+    </div>
+</div>
+
+<!-- Awards Section -->
+<div id="Awards" class="container max-w-7xl mx-auto flex flex-col gap-8 mt-10 px-4">
+    <div class="awards-card-container grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+            <div class="flex shrink-0">
+                <img src="{{ asset('assets/icons/values.jpg')}}" alt="Vision icon" class="w-16 h-14">
+            </div>
+            <hr class="border-gray-200">
+            <p class="font-bold text-xl">Vision</p>
+            <hr class="border-gray-200">
+            <p class="text-gray-500 text-sm">
+            <ul class="list-inside mt-2">
+                <li>We will strive to dominate every market sector in the food and beverage industry by emphasizing quality, marketing strategies, and customer service via the skill and dedication of every person in every role they perform.</li>
+                <li>To be the industry's chosen leading partner for the provision of excellent raw materials, nutritional products, and business solution.</li>
+            </ul>
+            </p>
         </div>
-        <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR {{ $about->type }}</p>
-            <div class="flex flex-col gap-[10px]">
-                <h2 class="font-bold text-4xl leading-[45px]">{{ $about->name }}</h2>
-                <div class="flex flex-col gap-5">
 
-                    @forelse ($about -> keypoints as $keypoint)
-                    <div class="flex items-center gap-[10px]">
-                        <div class="w-6 h-6 flex shrink-0">
-                            <img src="assets/icons/tick-circle.svg" alt="icon">
-                        </div>
-                        <p class="leading-[26px] font-semibold">{{$keypoint -> keypoint}}</p>
-                    </div>
-                    @empty
-                    @endforelse
+        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+            <div class="flex shrink-0">
+                <img src="{{ asset('assets/icons/mission.jpg')}}" alt="Mission icon" class="w-16 h-14">
+            </div>
+            <hr class="border-gray-200">
+            <p class="font-bold text-xl">Mission</p>
+            <hr class="border-gray-200">
+            <p class="text-gray-500 text-sm">
+            <ul class="list-inside mt-2">
+                <li>Our goal is to deliver the finest service so that the food and beverage sector can embrace us at all levels.</li>
+            </ul>
+            </p>
+        </div>
 
+        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+            <div class="flex shrink-0">
+                <img src="{{ asset('assets/icons/vision.jpg')}}" alt="Values icon" class="w-16 h-14">
+            </div>
+            <hr class="border-gray-200">
+            <p class="font-bold text-xl">Values</p>
+            <hr class="border-gray-200">
+            <p class="text-gray-500 text-sm">
+            <ul class="list-inside mt-2">
+                <li>We uphold long-term client relationships by keeping our word, supporting our business dealings, and providing the highest level of professional services to foster mutual growth.</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="Teams" class="bg-gray-100 w-full py-20 px-4 mt-20">
+    <div class="container max-w-[1130px] mx-auto flex flex-col gap-8 items-center">
+        <div class="flex flex-col gap-4 items-center">
+            <p class="bg-blue-500 text-white px-4 py-2 rounded-full uppercase font-bold text-sm">OUR CORE VALUE</p>
+            <h2 class="font-bold text-4xl leading-[45px] text-center text-gray-800">These Are The Core Values <br> Upheld By Our Company.</h2>
+        </div>
+        <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full">
+            @forelse($teams as $team)
+            <div class="card bg-white flex flex-col h-full items-center p-8 gap-4 rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300">
+                <div class="w-[100px] h-[100px] flex items-center justify-center rounded-full overflow-hidden bg-gray-200">
+                    <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full" alt="photo">
                 </div>
-            </div>
-        </div>
-    </div>
-    @empty
-    <p>Belum ada data terbaru</p>
-    @endforelse
-
-</div>
-<div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-    <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
-    <div class="logo-container flex flex-wrap gap-5 justify-center">
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-44.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="Stats" class="bg-cp-black w-full mt-20">
-    <div class="container max-w-[1000px] mx-auto py-10">
-        <div class="flex flex-wrap items-center justify-between p-[10px]">
-
-            @forelse($statistics as $statistic)
-            <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
-                <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                    <img src="{{ Storage::url($statistic->icon)}}" class="object-contain w-full h-full" alt="icon">
+                <div class="flex flex-col gap-1 text-center">
+                    <p class="font-bold text-xl leading-[30px] text-gray-800">{{ $team->name }}</p>
+                    <p class="text-gray-600">{{ $team->occupation }}</p>
                 </div>
-                <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">{{ $statistic->goal }}</p>
-                <p class="text-cp-light-grey">{{ $statistic->name }}</p>
             </div>
             @empty
-            <p>belum ada data terbaru</p>
+            <p class="text-center text-gray-500">Belum ada data terbaru</p>
             @endforelse
+            <!-- <a href="{{route('front.team')}}" class="bg-red-600 text-white rounded-xl py-2 px-4 mt-6 col-span-full text-center hover:bg-red-700 transition-all">View All</a> -->
+        </div>
+    </div>
+</div>
 
-        </div>
-    </div>
-</div>
-<div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-    <div class="flex items-center justify-between">
-        <div class="flex flex-col gap-[14px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
-            <h2 class="font-bold text-4xl leading-[45px]">We’ve Dedicated Our<br>Best Team Efforts</h2>
-        </div>
-        <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
-    </div>
-    <div class="awards-card-container grid grid-cols-4 gap-[30px] justify-center">
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="assets/icons/cup-blue.svg" alt="icon">
-            </div>
-            <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Solid Fundamental Crafter Async</p>
-            <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Bali, 2020</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="assets/icons/cup-blue.svg" alt="icon">
-            </div>
-            <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Most Crowded Yet Harmony Place</p>
-            <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Shanghai, 2021</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="assets/icons/cup-blue.svg" alt="icon">
-            </div>
-            <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Small Things Made Much Big Impacts</p>
-            <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Zurich, 2022</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="assets/icons/cup-blue.svg" alt="icon">
-            </div>
-            <hr class="border-[#E8EAF2]">
-            <p class="font-bold text-xl leading-[30px]">Teamwork and Solidarity</p>
-            <hr class="border-[#E8EAF2]">
-            <p class="text-cp-light-grey">Bandung, 2023</p>
-        </div>
-    </div>
-</div>
 <x-footer />
 
 @endsection

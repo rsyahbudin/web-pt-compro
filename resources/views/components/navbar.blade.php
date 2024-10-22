@@ -25,24 +25,19 @@
             <li>
                 <a href="{{ route('front.product') }}" class="{{ request()->routeIs('front.product') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold hover:text-blue-500 transition duration-300">Products</a>
             </li>
-            <li>
-                <a href="{{ route('front.team') }}" class="{{ request()->routeIs('front.team') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">Company</a>
-            </li>
-            <li>
-                <a href="#" class="font-semibold hover:text-blue-500 transition duration-300">Blog</a>
-            </li>
+
             <li>
                 <a href="{{ route('front.about') }}" class="{{ request()->routeIs('front.about') ? 'text-gray-500' : 'hover:text-blue-500' }} font-semibold transition duration-300">About</a>
             </li>
             <!-- Mobile Get a Quote Button -->
             <li class="md:hidden w-full mt-5">
-                <a href="{{ route('front.appointment') }}" class="bg-blue-600 text-white font-bold rounded-xl p-3 w-full text-center hover:shadow-lg transition duration-300">Get a Quote</a>
+                <a href="{{ route('front.appointment') }}" class="bg-blue-600 text-white font-bold rounded-xl p-3 w-full text-center hover:shadow-lg transition duration-300">Contact us</a>
             </li>
         </ul>
 
-        <!-- Get a Quote Button for Desktop -->
+        <!-- Contact us Button for Desktop -->
         <div class="hidden md:flex">
-            <a href="{{ route('front.appointment') }}" class="bg-blue-600 text-white font-bold rounded-xl p-3 hover:shadow-lg transition duration-300">Get a Quote</a>
+            <a href="{{ route('front.appointment') }}" class="bg-blue-600 text-white font-bold rounded-xl p-3 hover:shadow-lg transition duration-300">Contact us</a>
         </div>
     </div>
 </nav>

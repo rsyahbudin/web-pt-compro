@@ -10,26 +10,26 @@
     </div>
 </div>
 
-<div id="Contact" class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-12 relative z-10">
-    <div class="flex flex-col gap-12 w-full xl:w-1/2">
-        <div class="breadcrumb flex items-center gap-4">
+<div id="Contact" class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-12 relative z-10" data-aos="fade-up">
+    <div class="flex flex-col gap-12 w-full xl:w-1/2" data-aos="fade-right">
+        <div class="breadcrumb flex items-center gap-4" data-aos="fade-left">
             <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
             <span class="text-cp-light-grey">/</span>
             <p class="text-gray-600">Product</p>
             <span class="text-cp-light-grey">/</span>
             <p class="text-cp-black font-semibold">Appointment</p>
         </div>
-        <h1 class="text-5xl font-bold leading-tight text-gray-800">We Help You to Build Awesome Projects</h1>
-        <div class="space-y-4">
-            <div class="flex items-center gap-2">
+        <h1 class="text-5xl font-bold leading-tight text-gray-800" data-aos="zoom-in">We Help You to Build Awesome Projects</h1>
+        <div class="space-y-4" data-aos="fade-up">
+            <div class="flex items-center gap-2" data-aos="fade-up" data-aos-delay="100">
                 <img src="assets/icons/global.svg" alt="Location Icon" class="w-6 h-6">
                 <p class="text-cp-dark-blue font-semibold">Kawasan Bangunan Multi Guna, Taman Tekno BSD City, Blk. H2 Jl. Sektor 11 No.5, Setu, Kec. Setu, Kota Tangerang Selatan, Banten 15314</p>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" data-aos="fade-up" data-aos-delay="200">
                 <img src="assets/icons/call.svg" alt="Phone Icon" class="w-6 h-6">
                 <p class="text-cp-dark-blue font-semibold">(021) 7563713</p>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" data-aos="fade-up" data-aos-delay="300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-800">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                 </svg>
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <form class="w-full xl:w-[700px] bg-white shadow-lg p-10 rounded-2xl space-y-8">
+    <form class="w-full xl:w-[700px] bg-white shadow-lg p-10 rounded-2xl space-y-8" data-aos="fade-left">
         <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Contact Us</h2>
 
         @csrf
@@ -106,7 +106,7 @@
 @endsection
 
 @push ('after-scripts')
-<script src="js/contact-form.js"></script>
+<script src="{{asset('js/contact-form.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 @endpush

@@ -14,8 +14,8 @@
     </div>
 
     <!-- About Us Section -->
-    <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4">
-        <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10">
+    <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4" >
+        <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10" data-aos="fade-up">
             <!-- <h3 class="text-3xl font-bold mb-4 text-center text-blue-950">About Us</h3> -->
             <p class="text-gray-800 text-center leading-relaxed">
                 PT Setia Primatama Semesta is located in Tangerang, Indonesia. A company that supplies chemicals mostly for food additives and nutritions to Indonesia's food manufacturing sector. We are a sister company with PT Setia Tritunggal Inti Artha that mainly focuses on pharmaceuticals for more than 10 years of operation.
@@ -28,7 +28,7 @@
 </div>
 
 <!-- Map Section -->
-<div id="Map" class="container max-w-[1130px] mx-auto mt-8 px-4">
+<div id="Map" class="container max-w-[1130px] mx-auto mt-8 px-4" data-aos="zoom-in">
     <div class="map-container rounded-lg overflow-hidden shadow-lg">
         <iframe
             class="w-full h-[400px] rounded-lg"
@@ -36,6 +36,7 @@
             frameborder="0"
             allowfullscreen=""
             aria-hidden="false"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             tabindex="0">
         </iframe>
     </div>
@@ -43,8 +44,8 @@
 
 <!-- Awards Section -->
 <div id="Awards" class="container max-w-7xl mx-auto flex flex-col gap-8 mt-10 px-4">
-    <div class="awards-card-container grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+    <div class="awards-card-container grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
+        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" data-aos="flip-left">
             <div class="flex shrink-0">
                 <img src="{{ asset('assets/icons/values.jpg')}}" alt="Vision icon" class="w-16 h-14">
             </div>
@@ -59,7 +60,7 @@
             </p>
         </div>
 
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" data-aos="flip-right">
             <div class="flex shrink-0">
                 <img src="{{ asset('assets/icons/mission.jpg')}}" alt="Mission icon" class="w-16 h-14">
             </div>
@@ -73,7 +74,7 @@
             </p>
         </div>
 
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
+        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" data-aos="flip-left">
             <div class="flex shrink-0">
                 <img src="{{ asset('assets/icons/vision.jpg')}}" alt="Values icon" class="w-16 h-14">
             </div>
@@ -91,13 +92,13 @@
 
 <div id="Teams" class="bg-gray-100 w-full py-20 px-4 mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-8 items-center">
-        <div class="flex flex-col gap-4 items-center">
+        <div class="flex flex-col gap-4 items-center" data-aos="fade-down">
             <p class="bg-blue-500 text-white px-4 py-2 rounded-full uppercase font-bold text-sm">OUR CORE VALUE</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center text-gray-800">These Are The Core Values <br> Upheld By Our Company.</h2>
         </div>
-        <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full">
+        <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full" data-aos="fade-up">
             @forelse($teams as $team)
-            <div class="card bg-white flex flex-col h-full items-center p-8 gap-4 rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300">
+            <div class="card bg-white flex flex-col h-full items-center p-8 gap-4 rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300" data-aos="zoom-in">
                 <div class="w-[100px] h-[100px] flex items-center justify-center rounded-full overflow-hidden bg-gray-200">
                     <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full" alt="photo">
                 </div>

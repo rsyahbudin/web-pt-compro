@@ -20,7 +20,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         @forelse($principles as $principle)
         <!-- Modal Trigger -->
-        <div class="product-card cursor-pointer" id="openModal{{ $principle->id }}" onclick="openModal({{ $principle->id }})">
+        <div class="product-card cursor-pointer" id="openModal{{ $principle->id }}" onclick="openModal({{ $principle->id }})" data-aos="fade-up" data-aos-duration="800">
             <div class="w-full h-[250px] flex shrink-0 overflow-hidden relative rounded-lg">
                 <img src="{{ Storage::url($principle->thumbnail) }}"
                     class="product-image w-full h-full object-cover transition-transform duration-200 transform hover:scale-105 rounded-lg"
@@ -32,10 +32,9 @@
         </div>
 
         <!-- Modal -->
-        <!-- Modal -->
-        <div id="productModal{{ $principle->id }}" class="fixed inset-0 flex items-center justify-center hidden transition-opacity duration-300 z-50">
-            <div class="modal-overlay absolute inset-0 bg-black bg-opacity-70 transition-opacity duration-300" onclick="closeModal({{ $principle->id }})"></div>
-            <div class="modal-content bg-white rounded-lg shadow-lg w-11/12 md:w-1/3 transform scale-75 md:scale-100 max-h-[90vh] flex flex-col">
+        <div id="productModal{{ $principle->id }}" class="fixed inset-0 flex items-center justify-center hidden transition-opacity duration-300 z-50 modal" onclick="closeModal({{ $principle->id }})">
+            <div class="modal-overlay absolute inset-0 bg-black bg-opacity-70 transition-opacity duration-300"></div>
+            <div class="modal-content bg-white rounded-lg shadow-lg w-11/12 md:w-1/3 transform scale-75 md:scale-100 max-h-[90vh] flex flex-col" data-aos="zoom-in" data-aos-duration="800" style="opacity: 0; transition: opacity 0.3s ease;">
                 <div class="modal-header flex justify-between items-center p-4 border-b">
                     <h5 class="text-lg font-semibold" id="productModalLabel{{ $principle->id }}">{{ $principle->name }}</h5>
                     <button type="button" class="close-modal text-gray-400 hover:text-gray-600" aria-label="Close" onclick="closeModal({{ $principle->id }})">
@@ -66,20 +65,18 @@
                             </tr>
                             @endforeach
                         </tbody>
-
                     </table>
                     @endif
                 </div>
-
             </div>
         </div>
-
 
         @empty
         <p class="text-center col-span-full">Belum ada data terbaru</p>
         @endforelse
     </div>
 </div>
+
 <x-footer />
 
 
@@ -91,11 +88,31 @@
 
 <script>
     function openModal(id) {
-        document.getElementById(`productModal${id}`).classList.remove('hidden');
+        const modal = document.getElementById(`productModal${id}`);
+        modal.classList.remove('hidden'); // Show modal
+        // Trigger a reflow to restart the CSS transition
+        modal.querySelector('.modal-content').style.opacity = 0; // Set opacity to 0 initially
+        modal.querySelector('.modal-content').style.transform = 'scale(0.75)'; // Start smaller
+
+        // Use a timeout to allow the initial styles to take effect before changing them
+        setTimeout(() => {
+            modal.querySelector('.modal-content').style.opacity = 1; // Fade in
+            modal.querySelector('.modal-content').style.transform = 'scale(1)'; // Scale to normal size
+        }, 50); // Small delay to trigger the transition
     }
 
     function closeModal(id) {
-        document.getElementById(`productModal${id}`).classList.add('hidden');
+        const modal = document.getElementById(`productModal${id}`);
+        const modalContent = modal.querySelector('.modal-content');
+
+        modalContent.style.opacity = 0; // Start fade-out
+        modalContent.style.transform = 'scale(0.75)'; // Scale down
+
+        // Delay hiding the modal until the fade-out transition is complete
+        setTimeout(() => {
+            modal.classList.add('hidden'); // Hide modal
+            modalContent.style.transform = 'scale(1)'; // Reset scale for next open
+        }, 300); // Match this duration with your CSS transition
     }
 </script>
 @endpush

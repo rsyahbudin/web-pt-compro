@@ -48,6 +48,7 @@ class FrontController extends Controller
     public function appointment()
     {
         $principles = OurPrinciple::take(10)->get();
+        dd($principles);
         return view('front.appointment', compact('principles'));
     }
 

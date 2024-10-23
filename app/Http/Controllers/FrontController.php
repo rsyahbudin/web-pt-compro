@@ -26,7 +26,7 @@ class FrontController extends Controller
         $teams = OurTeam::take(7)->get();
         $testimonials = Testimonial::take(4)->get();
         $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
-        $clients = ProjectClient::take(3)->get();
+        $clients = ProjectClient::take(10)->get();
         $abouts = CompanyAbout::take(2)->get();
         return view('front.index', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_section', 'clients', 'abouts')); // Ganti dengan view yang sesuai
     }

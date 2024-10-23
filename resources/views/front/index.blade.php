@@ -41,7 +41,7 @@
 
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20" data-aos="fade-up">
     <h2 class="font-bold text-lg" data-aos="fade-in" data-aos-delay="200">
-        Trusted by 500+ Leading Food and Pharmaceutical Manufacturers Across Indonesia
+        Trusted by Leading Companies Across Indonesia
     </h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
         @forelse ($clients as $client)

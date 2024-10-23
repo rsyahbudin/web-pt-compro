@@ -66,7 +66,7 @@
             </h2>
         </div>
 
-        <a href="#" class="bg-red-600 py-2 px-4 rounded-xl font-bold text-white mt-4 md:mt-0 md:ml-4" data-aos="fade-left" data-aos-delay="200">Explore More</a>
+        <a href="{{route('front.product')}}" class="bg-red-600 py-2 px-4 rounded-xl font-bold text-white mt-4 md:mt-0 md:ml-4" data-aos="fade-left" data-aos-delay="200">Explore More</a>
     </div>
 
     <div class="flex flex-wrap items-start gap-6 justify-center" data-aos="fade-up" data-aos-delay="300">
@@ -78,7 +78,7 @@
             <div class="flex flex-col p-4 gap-2 relative z-10 flex-grow">
                 <p class="font-bold text-xl leading-6 text-black">{{ $principle->name }}</p>
                 <p class="leading-6 text-gray-700 flex-grow">{{ $principle->subtitle }}</p>
-                <a href="#" class="font-semibold text-cp-dark-blue hover:underline mt-auto">Learn More</a>
+                <a href="{{route('front.product')}}" class="font-semibold text-cp-dark-blue hover:underline mt-auto">Learn More</a>
             </div>
         </div>
         @empty
@@ -154,13 +154,13 @@
                 Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.
             </h2>
         </div>
-        <a href="#" class="bg-black p-4 rounded-xl font-bold text-white mt-6 md:mt-0">
+        <a href="{{route('front.about')}}" class="bg-black p-4 rounded-xl font-bold text-white mt-6 md:mt-0">
             Explore More
         </a>
     </div>
 
     <div class="awards-card-container grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class=" bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" >
+        <div class=" bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300">
             <div class="flex shrink-0">
                 <img src="{{ asset('assets/icons/values.jpg')}}" alt="Vision icon" class="w-16 h-14">
             </div>
@@ -210,7 +210,7 @@
         <div class="flex flex-col lg:flex-row gap-10 items-center">
             <div class="flex flex-col gap-6">
                 <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
-                <a href="contact.html" class="p-4 bg-red-600 rounded-xl text-white font-bold text-center hover:bg-red-700 transition duration-300">Contact Us</a>
+                <a href="{{route('front.appointment')}}" class="p-4 bg-red-600 rounded-xl text-white font-bold text-center hover:bg-red-700 transition duration-300">Contact Us</a>
             </div>
             <div class="flex flex-col gap-6 w-full">
                 <!-- Accordion Items -->

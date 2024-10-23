@@ -23,10 +23,10 @@
                     Explore Now
                 </a>
 
-                <button class="bg-blue-600 py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 font-bold text-white text-base sm:text-lg flex items-center gap-2" onclick="{modal.show()}" data-aos="fade-left" data-aos-duration="1000">
+                <!-- <button class="bg-blue-600 py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 font-bold text-white text-base sm:text-lg flex items-center gap-2" onclick="{modal.show()}" data-aos="fade-left" data-aos-duration="1000">
                     <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-5 h-5" alt="icon">
                     <span>Watch Video</span>
-                </button>
+                </button> -->
             </div>
         </div>
         @empty

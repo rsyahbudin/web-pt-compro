@@ -1,10 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PT Setia Primatama Semesta adalah distributor kimia terkemuka yang menyediakan bahan kimia berkualitas tinggi untuk industri makanan, farmasi, dan manufaktur.">
+
+    <link rel="icon" href="/assets/logo/logos.png" type="image/png">
+    <title>PT Setia Primatama Semesta - Distributor Kimia Terpercaya</title>
+
     @vite('resources/css/app.css')
 
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PT Setia Primatama Semesta",
+            "url": "https://setiaprimatamas.com",
+            "logo": "https://setiaprimatamas.com/assets/logo/logos.png",
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity-fade@2/flickity-fade.css">
@@ -28,4 +43,5 @@
 
     @stack('after-scripts')
 </body>
+
 </html>

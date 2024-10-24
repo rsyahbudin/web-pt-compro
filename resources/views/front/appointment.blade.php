@@ -18,7 +18,7 @@
             <span class="text-cp-light-grey">/</span>
             <p class="text-cp-black font-semibold">Appointment</p>
         </div>
-        <h1 class="text-5xl font-bold leading-tight text-gray-800" data-aos="zoom-in">We Help You to Build Awesome Projects</h1>
+        <h1 class="text-5xl font-bold leading-tight text-gray-800" data-aos="zoom-in">We're Ready to Assist You—Get in Touch!</h1>
         <div class="space-y-4" data-aos="fade-up">
             <div class="flex items-center gap-2" data-aos="fade-up" data-aos-delay="100">
                 <img src="assets/icons/global.svg" alt="Location Icon" class="w-6 h-6">
@@ -92,7 +92,7 @@
             </div>
         </div>
 
-        <button type="button" onclick="sendEmail()" class="w-full py-3 bg-red-600 text-white font-semibold rounded-full hover:shadow-lg transition duration-300">Book Appointment</button>
+        <button type="button" onclick="sendEmail()" class="w-full py-3 bg-red-600 text-white font-semibold rounded-full hover:shadow-lg transition duration-300">Send</button>
     </form>
 
 

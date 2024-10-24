@@ -46,16 +46,17 @@
     </h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
         @forelse ($clients as $client)
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+        <div class="logo-card h-[68px] w-[120px] flex items-center justify-center border border-[#E8EAF2] rounded-[18px] p-4 bg-white hover:border-cp-dark-blue transition-all duration-300 sm:w-[45%] md:w-[150px]" data-aos="zoom-in" data-aos-delay="300">
             <div class="overflow-hidden h-9">
                 <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
             </div>
         </div>
         @empty
-        <p data-aos="fade-in" data-aos-delay="400">belum ada data terbaru</p>
+        <p class="w-full" data-aos="fade-in" data-aos-delay="400">Belum ada data terbaru</p>
         @endforelse
     </div>
 </div>
+
 
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-20" data-aos="fade-up">
     <div class="flex flex-col items-center md:flex-row md:items-start justify-between" data-aos="fade-right">

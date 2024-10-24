@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity-fade@2/flickity-fade.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    
+
 </head>
 
 <body class="font-poppins text-cp-black">
@@ -35,15 +35,27 @@
     <!-- AOS SCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 600,
-            offset: 200,
-            once: false
-        });
-        // Optional: Refresh AOS on scroll
-        window.addEventListener('scroll', () => {
-            AOS.refresh();
-        });
+        // Function to initialize AOS
+        function initAOS() {
+            AOS.init({
+                duration: 600,
+                offset: 200,
+                once: false
+            });
+
+            // Check if the device is desktop
+            if (window.innerWidth >= 768) { // Adjust the breakpoint as needed
+                window.addEventListener('scroll', () => {
+                    AOS.refresh();
+                });
+            }
+        }
+
+        // Initialize AOS on page load
+        document.addEventListener('DOMContentLoaded', initAOS);
+
+        // Re-initialize AOS on window resize to handle responsive behavior
+        window.addEventListener('resize', initAOS);
     </script>
 
     @stack('after-scripts')

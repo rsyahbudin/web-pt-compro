@@ -209,15 +209,15 @@
 </div>
 
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-4 mt-20" data-aos="fade-up">
-    <div class="container max-w-[1000px] mx-auto">
-        <div class="flex flex-col lg:flex-row gap-10 items-center">
+    <div class="container max-w-[1000px] mx-auto overflow-hidden">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
             <div class="flex flex-col gap-6" data-aos="fade-right">
                 <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
                 <a href="{{route('front.appointment')}}" class="p-4 bg-red-600 rounded-xl text-white font-bold text-center hover:bg-red-700 transition duration-300">Contact Us</a>
             </div>
             <div class="flex flex-col gap-6 w-full" data-aos="fade-left">
                 <!-- Accordion Items -->
-                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm" data-aos="zoom-in">
+                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-1">
                         <span class="font-bold text-lg">Can installments be beneficial for both?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
@@ -226,16 +226,16 @@
                         <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
                     </div>
                 </div>
-                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="100">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-2">
-                        <span class="font-bold text-lg">What kind of framework you popular with?</span>
+                        <span class="font-bold text-lg">What kind of framework are you popular with?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
                     </button>
                     <div id="accordion-faq-2" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                         <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
                     </div>
                 </div>
-                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="200">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-3">
                         <span class="font-bold text-lg">What insurance provider do you use?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
@@ -244,7 +244,7 @@
                         <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
                     </div>
                 </div>
-                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm" data-aos="zoom-in" data-aos-delay="300">
+                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="300">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-4">
                         <span class="font-bold text-lg">What if we have other questions?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
@@ -257,6 +257,7 @@
         </div>
     </div>
 </div>
+
 
 <x-footer />
 <div id="video-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">

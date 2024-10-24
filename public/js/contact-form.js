@@ -1,31 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const dateButton = document.getElementById("dateButton");
-    const dateInput = document.getElementById("dateInput");
-
-    if (dateButton && dateInput) {
-        dateButton.addEventListener("click", () => {
-            if (typeof dateInput.showPicker === "function") {
-                dateInput.showPicker();
-            } else {
-                alert("Date picker not supported on this browser.");
-            }
-        });
-
-        dateInput.addEventListener("change", () => {
-            dateButton.textContent = dateInput.value;
-            dateButton.classList.add("font-semibold");
-        });
-    }
-});
-
 function sendEmail() {
-    const name = document.getElementById("name")?.value || "";
-    const email = document.getElementById("email")?.value || "";
-    const companyName = document.getElementById("company_name")?.value || "";
+    const name = document.getElementById("name")?.value.trim();
+    const email = document.getElementById("email")?.value.trim();
+    const companyName = document.getElementById("company_name")?.value.trim();
     const productSelect = document.getElementById("product_id");
     const productInterest =
         productSelect?.options[productSelect.selectedIndex]?.text || "";
-    const brief = document.getElementById("brief")?.value || "";
+    const brief = document.getElementById("brief")?.value.trim();
+
+    // Check if all required fields are filled
+    if (!name || !email || !companyName || !productInterest || !brief) {
+        alert("Please fill in all required fields.");
+        return; // Exit the function if validation fails
+    }
 
     const subject = "New Appointment Request";
     const body = `

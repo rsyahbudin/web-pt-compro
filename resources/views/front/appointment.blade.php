@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <form class="w-full xl:w-[700px] bg-white shadow-lg p-10 rounded-2xl space-y-8" data-aos="fade-left">
+    <form id="contactForm" class="w-full xl:w-[700px] bg-white shadow-lg p-10 rounded-2xl space-y-8" data-aos="fade-left">
         <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Contact Us</h2>
 
         @csrf
@@ -88,7 +88,7 @@
             <label for="brief" class="block font-medium mb-2 text-gray-700">Brief</label>
             <div class="flex ">
                 <img src="assets/icons/message-text.svg" alt="Message Icon" class="w-5 h-5 mr-3 mt-1">
-                <textarea name="brief" id="brief" rows="4" class="w-full p-2 bg-transparent outline-none resize-none placeholder-gray-500 rounded-md" placeholder="Tell us about your project"></textarea>
+                <textarea name="brief" id="brief" rows="4" class="w-full p-2 bg-transparent outline-none resize-none placeholder-gray-500 rounded-md" placeholder="Tell us about your project" required></textarea>
             </div>
         </div>
 
@@ -105,6 +105,7 @@
 @endsection
 
 @push ('after-scripts')
+
 <script src="{{asset('js/contact-form.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 

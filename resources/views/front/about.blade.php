@@ -9,7 +9,7 @@
             <div class="breadcrumb flex items-center justify-center gap-[30px]">
                 <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
                 <span class="text-cp-light-grey">/</span>
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Product</p>
+                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">About Us</p>
             </div>
             <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4">
                 <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10" data-aos="fade-up">

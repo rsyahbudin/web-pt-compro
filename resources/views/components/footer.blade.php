@@ -1,8 +1,8 @@
 <footer class="bg-blue-950 w-full relative overflow-hidden mt-20 py-16">
-    <div class="container max-w-[1130px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white px-6">
+    <div class="container w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white px-6">
         <!-- Logo and Company Info -->
         <div class="flex flex-col items-start gap-6">
-            <div class="flex items-center gap-4">
+            <div class="flex items-left gap-4">
                 <div class="h-[43px] overflow-hidden">
                     <img src="{{ asset('assets/logo/logos.png') }}" class="object-contain w-full h-full" alt="logo">
                 </div>
@@ -41,7 +41,7 @@
                 </svg>
                 Contact
             </h2>
-            <p class="text-gray-400 text-left ">
+            <p class="text-gray-400 text-left">
                 (021) 756 3685 / 756 3663 / 756 3701 / 756 2186<br>
                 Fax: (021) 756 3713<br>
                 <a href="mailto:alghifari@setiaprimatamas.com" class="text-gray-300 hover:underline">
@@ -58,4 +58,3 @@
         </p>
     </div>
 </footer>
-

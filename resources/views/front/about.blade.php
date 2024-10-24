@@ -1,9 +1,10 @@
 @extends ('front.layouts.app')
 @section ('content')
 
-<div id="header" class="bg-[#F6F7FA] relative">
+<div id="header" class="relative">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <x-navbar />
+
         <div class="flex flex-col gap-[50px] items-center py-20">
             <div class="breadcrumb flex items-center justify-center gap-[30px]">
                 <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
@@ -14,21 +15,44 @@
     </div>
 
     <!-- About Us Section -->
-    <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4" >
+    <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4">
         <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10" data-aos="fade-up">
-            <!-- <h3 class="text-3xl font-bold mb-4 text-center text-blue-950">About Us</h3> -->
             <p class="text-gray-800 text-center leading-relaxed">
-                PT Setia Primatama Semesta is located in Tangerang, Indonesia. A company that supplies chemicals mostly for food additives and nutritions to Indonesia's food manufacturing sector. We are a sister company with PT Setia Tritunggal Inti Artha that mainly focuses on pharmaceuticals for more than 10 years of operation.
+                PT Setia Primatama Semesta is located in Tangerang, Indonesia. A company that supplies chemicals mostly for food additives and nutrition to Indonesia's food manufacturing sector. We are a sister company with PT Setia Tritunggal Inti Artha, which has been mainly focused on pharmaceuticals for more than 10 years of operation.
             </p>
             <p class="text-gray-800 text-center leading-relaxed mt-2">
-                The company is aiming to serve the best quality ingredients, including the competitive price, and providing great service towards the industry. We are committed to being your raw material ingredients partner solution within the range of product development.
+                The company aims to serve the best quality ingredients at competitive prices while providing excellent service to the industry. We are committed to being your raw material ingredient partner solution within the range of product development.
             </p>
         </div>
     </div>
 </div>
 
+
+<div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20" data-aos="fade-up">
+    <h2 class="font-bold text-lg" data-aos="fade-in" data-aos-delay="200">
+        Trusted by Leading Companies Across Indonesia
+    </h2>
+    <div class="logo-container flex flex-wrap gap-5 justify-center">
+        @forelse ($clients as $client)
+        <div class="relative group">
+            <div class="logo-card h-[68px] w-[120px] flex items-center justify-center border border-[#E8EAF2] rounded-[18px] p-4 bg-white hover:border-cp-dark-blue transition-all duration-300 sm:w-[45%] md:w-[150px]" data-aos="zoom-in" data-aos-delay="300">
+                <div class="overflow-hidden h-9">
+                    <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
+                </div>
+            </div>
+            <!-- Tooltip -->
+            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-sm rounded-lg py-1 px-2 shadow-lg transition-opacity duration-300 delay-150 opacity-0 group-hover:opacity-100">
+                {{ $client->name }}
+            </div>
+        </div>
+        @empty
+        <p class="w-full" data-aos="fade-in" data-aos-delay="400">Belum ada data terbaru</p>
+        @endforelse
+    </div>
+</div>
+
 <!-- Map Section -->
-<div id="Map" class="container max-w-[1130px] mx-auto mt-8 px-4" data-aos="zoom-in">
+<div id="Map" class="container max-w-[1130px] mx-auto mt-20 px-4" data-aos="zoom-in">
     <div class="map-container rounded-lg overflow-hidden shadow-lg">
         <iframe
             class="w-full h-[400px] rounded-lg"
@@ -114,6 +138,8 @@
         </div>
     </div>
 </div>
+
+
 
 <x-footer />
 

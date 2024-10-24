@@ -42,7 +42,8 @@ class FrontController extends Controller
     {
         $teams = OurTeam::take(5)->get();
         $abouts = CompanyAbout::take(2)->get();
-        return view('front.about', compact('teams', 'abouts'));
+        $clients = ProjectClient::take(10)->get();
+        return view('front.about', compact('teams', 'abouts', 'clients'));
     }
 
     public function appointment()

@@ -1,4 +1,4 @@
-<footer class="bg-blue-950 w-full relative overflow-hidden mt-20 py-16">
+<footer class="bg-blue-950 w-full relative overflow-hidden  py-16">
     <div class="container w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white px-6">
         <!-- Logo and Company Info -->
         <div class="flex flex-col items-start gap-6">

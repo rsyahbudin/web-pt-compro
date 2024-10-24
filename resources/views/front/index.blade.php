@@ -120,41 +120,46 @@
     </div>
 </div>
 
-<div id="Testimonials" class="w-full flex flex-col items-center mt-20" data-aos="fade-up">
-    <div class="main-carousel w-full relative">
+<div id="Testimonials" class="w-full flex flex-wrap items-center mt-20" data-aos="fade-up">
+    <!-- Testimonial Text Section -->
+    <div class="relative text-center px-4 mb-10 w-full lg:w-6/12 mx-auto">
+        <div class="absolute top-0 left-0 transform -translate-y-1/2">
+            <img src="{{ asset('assets/icons/quote.svg') }}" alt="quote icon" class="w-12 h-12">
+        </div>
+        <h2 class="font-semibold text-4xl leading-tight relative z-10 mb-4">
+            Discover Our Warehouse <br> Serving Clients Nationwide
+        </h2>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="main-carousel w-full lg:w-6/12 relative mx-auto">
         @forelse($testimonials as $testimonial)
-        <div class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-            <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                <div class="flex flex-col gap-[30px]">
-                    <div class="h-9 overflow-hidden">
-                        <img src="{{ Storage::url($testimonial->client->logo)}}" class="object-contain" alt="icon">
-                    </div>
-                    <div class="relative pt-[27px] pl-[30px]">
-                        <div class="absolute top-0 left-0">
-                            <img src="{{ asset('assets/icons/quote.svg')}}" alt="icon">
-                        </div>
-                        <p class="font-semibold text-4xl leading-[46px] relative z-10">Discover Our Warehouse <br>Serving Clients Nationwide</p>
-                    </div>
+        <div class="carousel-card container max-w-[1130px] w-full flex justify-center lg:mx-[calc((100vw-1130px)/2)]">
+            <div class="relative">
+                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-2xl overflow-hidden bg-[#D9D9D9] shadow-lg transition-transform duration-300 ease-in-out">
+                    <img src="{{ Storage::url($testimonial->thumbnail) }}" class="w-full h-full object-cover object-center" alt="thumbnail">
                 </div>
-                <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0"></div>
-            </div>
-            <div class="testimonial-thumbnail relative w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                <img src="{{ Storage::url($testimonial->thumbnail)}}" class="w-full h-full object-cover object-center" alt="thumbnail">
 
                 <!-- Carousel Arrows inside the thumbnail -->
-                <div class="left-arrow absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 cursor-pointer">
+                <div class="left-arrow absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 cursor-pointer" onclick="moveCarousel(-1)">
                     &#10094; <!-- Left Arrow -->
                 </div>
-                <div class="right-arrow absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 cursor-pointer">
+                <div class="right-arrow absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 cursor-pointer" onclick="moveCarousel(1)">
                     &#10095; <!-- Right Arrow -->
                 </div>
             </div>
         </div>
         @empty
-        <p data-aos="fade-in" class="text-center text-gray-500">Belum ada data terbaru</p>
+        <p class="text-center text-gray-500">Belum ada data terbaru</p>
         @endforelse
     </div>
+
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0 mt-4 w-full"></div>
 </div>
+
+
+
 
 <div id="Awards" class="container max-w-7xl mx-auto flex flex-col gap-8 mt-20 px-4">
     <div class="flex flex-col md:flex-row items-center justify-between">

@@ -1,7 +1,7 @@
 <nav class="bg-white p-5 rounded-2xl shadow-md">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
         <!-- Logo and Company Info -->
-        <div class="flex items-center gap-3">
+        <a href="{{ route('front.index') }}" class="flex items-center gap-3">
             <div class="h-11 w-11 overflow-hidden">
                 <img src="assets/logo/logos.png" class="object-contain w-full h-full" alt="logo">
             </div>
@@ -9,7 +9,8 @@
                 <p class="font-extrabold text-xl leading-7">Setia Primatama Semesta</p>
                 <p class="text-sm text-gray-500">Your Trusted Solution</p>
             </div>
-        </div>
+        </a>
+
         <!-- Hamburger Icon (Mobile View) -->
         <div class="md:hidden">
             <button id="hamburger" class="text-3xl focus:outline-none">

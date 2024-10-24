@@ -76,12 +76,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
         @empty
         <p class="text-center col-span-full">Belum ada data terbaru</p>
         @endforelse

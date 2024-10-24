@@ -2,7 +2,7 @@
     <div class="container w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white px-6">
         <!-- Logo and Company Info -->
         <div class="flex flex-col items-start gap-6">
-            <div class="flex items-left gap-4">
+            <div class="flex items-start gap-4">
                 <div class="h-[43px] overflow-hidden">
                     <img src="{{ asset('assets/logo/logos.png') }}" class="object-contain w-full h-full" alt="logo">
                 </div>

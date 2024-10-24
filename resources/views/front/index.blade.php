@@ -27,6 +27,7 @@
                     <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-5 h-5" alt="icon">
                     <span>Watch Video</span>
                 </button> -->
+                
             </div>
         </div>
         @empty

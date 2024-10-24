@@ -34,42 +34,53 @@
         <!-- Modal -->
         <div id="productModal{{ $principle->id }}" class="fixed inset-0 flex items-center justify-center hidden transition-opacity duration-300 z-50 modal" onclick="closeModal({{ $principle->id }})">
             <div class="modal-overlay absolute inset-0 bg-black bg-opacity-70 transition-opacity duration-300"></div>
-            <div class="modal-content bg-white rounded-lg shadow-lg w-11/12 md:w-1/3 transform scale-75 md:scale-100 max-h-[90vh] flex flex-col" data-aos="zoom-in" data-aos-duration="800" style="opacity: 0; transition: opacity 0.3s ease;">
-                <div class="modal-header flex justify-between items-center p-4 border-b">
-                    <h5 class="text-lg font-semibold" id="productModalLabel{{ $principle->id }}">{{ $principle->name }}</h5>
-                    <button type="button" class="close-modal text-gray-400 hover:text-gray-600" aria-label="Close" onclick="closeModal({{ $principle->id }})">
-                        &times;
-                    </button>
+            <div class="modal-content bg-white rounded-lg shadow-lg w-11/12 md:w-1/3 max-h-[90vh] overflow-hidden flex flex-col transform scale-75 md:scale-100 transition-transform duration-300">
+                <!-- Header with Image -->
+                <div class="relative">
+                    <img src="{{ Storage::url($principle->thumbnail) }}" alt="{{ $principle->name }}" class="w-full h-32 object-cover rounded-t-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-t-lg">
+                        <h5 class="text-xl font-bold text-white z-10" id="productModalLabel{{ $principle->id }}">{{ $principle->name }}</h5>
+                        <button type="button" class="close-modal text-white hover:text-gray-200 absolute top-3 right-3" aria-label="Close" onclick="closeModal({{ $principle->id }})">
+                            &times;
+                        </button>
+                    </div>
                 </div>
-                <div class="modal-body p-4 overflow-y-auto flex-1">
-                    <p class="text-gray-700 italic mb-4">{{ $principle->subtitle }}</p>
+                <div class="modal-body p-6 flex-1 overflow-y-auto">
+                    <div class="text-center mb-6">
+                        <p class="text-lg font-semibold text-gray-800">{{ $principle->subtitle }}</p>
+                        <div class="mt-2 mx-auto w-24 h-1 bg-red-600 rounded-full"></div>
+                    </div>
+
+                    <!-- Added Product List Heading -->
+                    <h6 class="text-lg font-bold text-gray-800 mb-4 text-center">Product List</h6>
 
                     @if($principle->keypoints->isEmpty())
-                    <p class="text-gray-500 mb-3">No key points available.</p>
+                    <p class="text-gray-500 text-center mb-4">No key points available.</p>
                     @else
-                    <table class="w-full text-left mt-5 border-collapse border border-gray-300">
-                        <thead>
-                            <tr class="bg-red-600">
-                                <th class="py-2 px-4 text-white border-b border-gray-300">Item List</th>
-                                <th class="py-2 px-4 text-white text-right border-b border-gray-300">Manufacture</th>
-                            </tr>
-                        </thead>
-                        <!-- Table Body -->
-                        <tbody>
-                            @foreach ($principle->keypoints as $keypoint)
-                            <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
-                                <td class="py-2 px-4 border-b border-gray-300">{{ $keypoint->keypoint }}</td>
-                                <td class="py-2 px-4 text-right border-b border-gray-300 max-w-[150px] break-words">
-                                    {{ $keypoint->manufacture }}
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                    <div class="space-y-4">
+                        @foreach ($principle->keypoints as $keypoint)
+                        <div class="flex items-center py-3 px-4 bg-gray-100 rounded-lg shadow hover:shadow-md transition-shadow duration-300" onclick="event.stopPropagation();">
+                            <div class="bg-blue-600 text-white rounded-full p-2 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <p class="text-gray-800 text-lg font-medium">{{ $keypoint->keypoint }}</p>
+                        </div>
+                        @endforeach
+                    </div>
                     @endif
+                </div>
+                <div class="modal-footer p-4 border-t bg-gray-50">
+                    <button class="bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-red-700 transition duration-300" onclick="closeModal({{ $principle->id }})">Close</button>
                 </div>
             </div>
         </div>
+
+
+
+
+
 
         @empty
         <p class="text-center col-span-full">Belum ada data terbaru</p>

@@ -157,7 +157,7 @@
                 Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.
             </h2>
         </div>
-        <a href="{{ route('front.about') }}" class="bg-black p-4 rounded-xl font-bold text-white mt-6 md:mt-0">
+        <a href="{{ route('front.about') }}" class="bg-red-600 p-4 rounded-xl font-bold text-white mt-6 md:mt-0">
             Explore More
         </a>
     </div>

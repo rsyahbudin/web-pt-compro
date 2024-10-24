@@ -3,7 +3,7 @@
         <!-- Logo and Company Info -->
         <div class="flex flex-col items-start gap-6">
             <div class="flex items-start gap-4">
-                <div class="h-[43px] overflow-hidden">
+                <div class="h-[43px] overflow-hidden ">
                     <img src="{{ asset('assets/logo/logos.png') }}" class="object-contain w-full h-full" alt="logo">
                 </div>
                 <div>
@@ -11,7 +11,7 @@
                     <p id="CompanyTagline" class="text-sm text-gray-400">Your Trusted Solution</p>
                 </div>
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-4 z-20">
                 <a href="https://wa.link/6tn09n" target="_blank" class="w-8 h-8 flex cursor-pointer transition-transform transform hover:scale-110">
                     <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain" alt="whatsapp">
                 </a>

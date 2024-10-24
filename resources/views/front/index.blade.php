@@ -27,7 +27,7 @@
                     <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-5 h-5" alt="icon">
                     <span>Watch Video</span>
                 </button> -->
-                
+
             </div>
         </div>
         @empty
@@ -132,31 +132,28 @@
     </div>
 
     <!-- Carousel Section -->
-    <div class="main-carousel w-full lg:w-6/12 relative mx-auto">
-        @forelse($testimonials as $testimonial)
-        <div class="carousel-card container max-w-[1130px] w-full flex justify-center lg:mx-[calc((100vw-1130px)/2)]">
-            <div class="relative">
-                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-2xl overflow-hidden bg-[#D9D9D9] shadow-lg transition-transform duration-300 ease-in-out">
-                    <img src="{{ Storage::url($testimonial->thumbnail) }}" class="w-full h-full object-cover object-center" alt="thumbnail">
-                </div>
-
-                <!-- Carousel Arrows inside the thumbnail -->
-                <div class="left-arrow absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 cursor-pointer" onclick="moveCarousel(-1)">
-                    &#10094; <!-- Left Arrow -->
-                </div>
-                <div class="right-arrow absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 cursor-pointer" onclick="moveCarousel(1)">
-                    &#10095; <!-- Right Arrow -->
+    <div class="main-carousel w-full lg:w-6/12 relative mx-auto overflow-hidden">
+        <div class="carousel-container flickity" data-flickity='{ "fade": true, "wrapAround": true }'>
+            @forelse($testimonials as $testimonial)
+            <div class="carousel-card w-full flex justify-center">
+                <div class="relative max-w-full">
+                    <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-2xl overflow-hidden bg-[#D9D9D9] shadow-lg">
+                        <img src="{{ Storage::url($testimonial->thumbnail) }}" class="w-full h-full object-cover object-center" alt="thumbnail">
+                    </div>
                 </div>
             </div>
+            @empty
+            <p class="text-center text-gray-500">Belum ada data terbaru</p>
+            @endforelse
         </div>
-        @empty
-        <p class="text-center text-gray-500">Belum ada data terbaru</p>
-        @endforelse
     </div>
 
-    <!-- Carousel Indicators -->
+    <!-- Carousel Indicators (optional) -->
     <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0 mt-4 w-full"></div>
 </div>
+
+
+
 
 
 
@@ -311,6 +308,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script src="js/modal-video.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexity/1.2.1/jquery.flexity.min.js"></script>
 
 </script>
 @endpush

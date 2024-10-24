@@ -1,7 +1,7 @@
 @extends ('front.layouts.app')
 @section ('content')
 
-<div id="header" class="relative">
+<div id="header" class="bg-[#F6F7FA] relative">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <x-navbar />
 
@@ -9,23 +9,25 @@
             <div class="breadcrumb flex items-center justify-center gap-[30px]">
                 <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
                 <span class="text-cp-light-grey">/</span>
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">About Us</p>
+                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Product</p>
+            </div>
+            <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4">
+                <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10" data-aos="fade-up">
+                    <p class="text-gray-800 text-center leading-relaxed">
+                        PT Setia Primatama Semesta is located in Tangerang, Indonesia. A company that supplies chemicals mostly for food additives and nutrition to Indonesia's food manufacturing sector. We are a sister company with PT Setia Tritunggal Inti Artha, which has been mainly focused on pharmaceuticals for more than 10 years of operation.
+                    </p>
+                    <p class="text-gray-800 text-center leading-relaxed mt-2">
+                        The company aims to serve the best quality ingredients at competitive prices while providing excellent service to the industry. We are committed to being your raw material ingredient partner solution within the range of product development.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- About Us Section -->
-    <div id="AboutUs" class="container max-w-[1130px] mx-auto flex flex-col gap-8 mt-8 px-4">
-        <div class="bg-white p-8 rounded-lg shadow-lg transform -translate-y-10" data-aos="fade-up">
-            <p class="text-gray-800 text-center leading-relaxed">
-                PT Setia Primatama Semesta is located in Tangerang, Indonesia. A company that supplies chemicals mostly for food additives and nutrition to Indonesia's food manufacturing sector. We are a sister company with PT Setia Tritunggal Inti Artha, which has been mainly focused on pharmaceuticals for more than 10 years of operation.
-            </p>
-            <p class="text-gray-800 text-center leading-relaxed mt-2">
-                The company aims to serve the best quality ingredients at competitive prices while providing excellent service to the industry. We are committed to being your raw material ingredient partner solution within the range of product development.
-            </p>
-        </div>
-    </div>
+
 </div>
+
 
 
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20" data-aos="fade-up">

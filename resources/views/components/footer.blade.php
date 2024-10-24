@@ -1,13 +1,13 @@
 <footer class="bg-blue-950 w-full relative overflow-hidden  py-16">
     <div class="container w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white px-6">
         <!-- Logo and Company Info -->
-        <div class="flex flex-col items-start gap-6">
+        <div class="flex flex-col items-start md:items-start gap-6">
             <div class="flex items-start gap-4">
-                <div class="h-[43px] overflow-hidden ">
+                <div class="h-8 overflow-hidden items-start ">
                     <img src="{{ asset('assets/logo/logos.png') }}" class="object-contain w-full h-full" alt="logo">
                 </div>
-                <div>
-                    <p id="CompanyName" class="font-extrabold text-2xl leading-[30px]">Setia Primatama Semesta</p>
+                <div class="flex flex-col items-start">
+                    <p id="CompanyName" class="font-extrabold text-2xl ">Setia Primatama Semesta</p>
                     <p id="CompanyTagline" class="text-sm text-gray-400">Your Trusted Solution</p>
                 </div>
             </div>

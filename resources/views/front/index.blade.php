@@ -46,9 +46,15 @@
     </h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
         @forelse ($clients as $client)
-        <div class="logo-card h-[68px] w-[120px] flex items-center justify-center border border-[#E8EAF2] rounded-[18px] p-4 bg-white hover:border-cp-dark-blue transition-all duration-300 sm:w-[45%] md:w-[150px]" data-aos="zoom-in" data-aos-delay="300">
-            <div class="overflow-hidden h-9">
-                <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
+        <div class="relative group">
+            <div class="logo-card h-[68px] w-[120px] flex items-center justify-center border border-[#E8EAF2] rounded-[18px] p-4 bg-white hover:border-cp-dark-blue transition-all duration-300 sm:w-[45%] md:w-[150px]" data-aos="zoom-in" data-aos-delay="300">
+                <div class="overflow-hidden h-9">
+                    <img src="{{ Storage::url($client->logo)}}" class="object-contain w-full h-full" alt="logo">
+                </div>
+            </div>
+            <!-- Tooltip -->
+            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-sm rounded-lg py-1 px-2 shadow-lg transition-opacity duration-300 delay-150 opacity-0 group-hover:opacity-100">
+                {{ $client->name }}
             </div>
         </div>
         @empty
@@ -56,6 +62,7 @@
         @endforelse
     </div>
 </div>
+
 
 
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-20" data-aos="fade-up">

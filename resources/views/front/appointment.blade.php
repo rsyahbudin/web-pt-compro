@@ -5,13 +5,12 @@
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <x-navbar />
         <div class="flex flex-col gap-[40px] items-center py-10">
-
         </div>
     </div>
 </div>
 
 <div id="Contact" class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-12 relative z-10" data-aos="fade-up">
-    <div class="flex flex-col gap-12 w-full xl:w-1/2" data-aos="fade-right">
+    <div class="flex flex-col gap-12 w-full xl:w-1/2 ml-4" data-aos="fade-right">
         <div class="breadcrumb flex items-center gap-4" data-aos="fade-left">
             <p class="text-gray-500 last-of-type:text-gray-500 last-of-type:font-semibold">Home</p>
             <span class="text-cp-light-grey">/</span>

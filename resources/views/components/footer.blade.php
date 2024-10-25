@@ -44,7 +44,7 @@
             <p class="text-gray-400 text-left">
                 (021) 756 3685 / 756 3663 / 756 3701 / 756 2186<br>
                 Fax: (021) 756 3713<br>
-                <a href="mailto:alghifari@setiaprimatamas.com" class="text-gray-300 hover:underline">
+                <a href="mailto:alghifari@setiaprimatamas.com" class="text-gray-300 cursor-pointer hover:underline">
                     alghifari@setiaprimatamas.com
                 </a>
             </p>
@@ -52,9 +52,11 @@
     </div>
 
     <!-- Background Text -->
-    <div class="absolute -bottom-[135px] w-full flex justify-center">
-        <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">
+    <div class="absolute -bottom-[135px] w-full flex justify-center z-0 pointer-events-none">
+        <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5 select-none">
             SPS
         </p>
     </div>
+
+
 </footer>

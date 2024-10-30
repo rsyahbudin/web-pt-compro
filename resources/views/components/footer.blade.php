@@ -44,8 +44,8 @@
             <p class="text-gray-400 text-left">
                 (021) 756 3685 / 756 3663 / 756 3701 / 756 2186<br>
                 Fax: (021) 756 3713<br>
-                <a href="mailto:alghifari@setiaprimatamas.com" class="text-gray-300 cursor-pointer hover:underline">
-                    alghifari@setiaprimatamas.com
+                <a href="mailto:admin@setiaprimatamas.com" class="text-gray-300 cursor-pointer hover:underline">
+                    admin@setiaprimatamas.com
                 </a>
             </p>
         </div>

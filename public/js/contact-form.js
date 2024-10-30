@@ -22,7 +22,7 @@ function sendEmail() {
         Brief: ${brief}
     `;
 
-    const mailtoLink = `mailto:alghifari@setiaprimatamas.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:admin@setiaprimatamas.com?subject=${encodeURIComponent(
         subject
     )}&body=${encodeURIComponent(body)}`;
 

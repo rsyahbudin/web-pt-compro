@@ -65,7 +65,7 @@
 
 
 <div id="Explore"></div>
-<div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-20" data-aos="fade-up">
+<div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-10" data-aos="fade-up">
     <div class="flex flex-col items-center md:flex-row md:items-start justify-between" data-aos="fade-right">
         <div class="flex-grow text-center md:text-left">
             <span id="OurProducts" class="bg-blue-500 text-white inline-block p-3 rounded-full uppercase font-bold text-sm">OUR PRODUCTS</span>

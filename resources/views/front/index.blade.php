@@ -19,7 +19,7 @@
                 </p>
             </div>
             <div class="relative flex flex-col items-center gap-4 sm:flex-row" data-aos="fade-right" data-aos-duration="1000">
-                <a href="#OurPrinciples" class="bg-red-600 py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 font-bold text-white text-base sm:text-lg">
+                <a href="#Explore" class="bg-red-600 py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 font-bold text-white text-base sm:text-lg">
                     Explore Now
                 </a>
 
@@ -64,11 +64,11 @@
 </div>
 
 
-
+<div id="Explore"></div>
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-20" data-aos="fade-up">
     <div class="flex flex-col items-center md:flex-row md:items-start justify-between" data-aos="fade-right">
         <div class="flex-grow text-center md:text-left">
-            <span class="bg-blue-500 text-white inline-block p-3 rounded-full uppercase font-bold text-sm">OUR PRODUCTS</span>
+            <span id="OurProducts" class="bg-blue-500 text-white inline-block p-3 rounded-full uppercase font-bold text-sm">OUR PRODUCTS</span>
 
             <h2 class="font-bold text-3xl sm:text-4xl leading-tight text-black mt-2">
                 We Provide Best Products <br> For Your Company

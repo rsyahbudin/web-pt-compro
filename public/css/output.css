@@ -213,6 +213,7 @@ sup {
 
 
 @media (max-width: 768px) {
+  
   .warehouse-bg {
     display: none; /* Hides the background image on small screens */
   }
@@ -1796,24 +1797,25 @@ video {
   }
   .md\:flex-row {
     flex-direction: row;
-}
-.md\:flex-col {
-  flex-direction: column;
-}
-.md\:flex-wrap {
-  flex-wrap: wrap;
-}
-.md\:hidden {
-  display: none;
-}
-.md\:flex {
-  display: flex;
-}
-.md\:block {
-  display: block;
-}
-.md\:justify-between {
-  justify-content: space-between;
+  }
+  .md\:flex-col {
+    flex-direction: column;
+  }
+  .md\:flex-wrap {
+    flex-wrap: wrap;
+  }
+  .md\:hidden {
+    display: none;
+  }
+  .md\:flex {
+    display: flex;
+  }
+  .md\:block {
+    display: block;
+  }
+  .md\:justify-between {
+    justify-content: space-between;
+  } 
 }
 
 @media (min-width: 1024px) {

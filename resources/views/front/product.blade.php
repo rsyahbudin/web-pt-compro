@@ -25,7 +25,7 @@
                 <img src="{{ Storage::url($principle->thumbnail) }}"
                     class="product-image w-full h-full object-cover transition-transform duration-200 transform hover:scale-105 rounded-lg"
                     alt="{{ $principle->name }}" />
-                <div class="overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-100 sm:opacity-0 transition-opacity duration-300 hover:opacity-100">
                     <h5 class="text-white text-lg font-semibold">{{ $principle->name }}</h5>
                 </div>
             </div>

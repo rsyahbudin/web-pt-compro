@@ -1,44 +1,53 @@
 @extends('front.layouts.app')
 
 @section('content')
-<div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
-    <div class="container max-w-[1130px] mx-auto pt-10 z-10 relative">
-        <x-navbar />
+<div id="header" class="relative bg-[#F6F7FA] overflow-hidden">
+    <!-- Navbar -->
+    <div class="relative z-20">
+        <div class="container max-w-[1130px] mx-auto pt-6">
+            <x-navbar />
+        </div>
+    </div>
 
+    <!-- Hero Section -->
+    <div class="container max-w-[1200px] mx-auto pt-12 pb-16 sm:pt-20 sm:pb-24 relative z-10 text-center sm:text-left text-white">
         @forelse ($hero_section as $hero)
-        <input type="hidden" name="path_video" id="path_video" value="{{$hero->path_video}}">
-        <div id="Hero" class="flex flex-col gap-6 mt-10 pb-16 sm:mt-20 sm:pb-20 text-left relative" data-aos="fade-up" data-aos-duration="1000">
-            <!-- Mobile overlay to darken the background -->
-
-            <div class="relative flex flex-col gap-4 sm:text-left text-center" data-aos="zoom-in" data-aos-duration="1000">
-                <h1 class="font-extrabold text-2xl leading-snug text-white sm:text-black sm:text-4xl sm:leading-tight sm:max-w-[536px] text-shadow-lg">
-                    {{$hero->heading}}
+        <input type="hidden" name="path_video" id="path_video" value="{{ $hero->path_video }}">
+        
+        <div id="Hero" class="flex flex-col gap-6 items-center sm:items-start mt-10 relative px-6" data-aos="fade-up" data-aos-duration="1000">
+            <!-- Hero Heading -->
+            <div class="max-w-3xl mx-auto sm:mx-0 text-center sm:text-left">
+                <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700 drop-shadow-md mb-2 sm:mb-4" data-aos="fade-down" data-aos-duration="1200">
+                    {{ $hero->heading }}
                 </h1>
-                <p class="text-white leading-6 sm:text-gray-700 sm:leading-7 sm:max-w-[437px] text-shadow-md">
-                    {{$hero->subheading}}
+                
+                <!-- Subheading -->
+                <p class="text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-lg mx-auto sm:mx-0 opacity-90" data-aos="fade-left" data-aos-duration="1200">
+                    {{ $hero->subheading }}
                 </p>
             </div>
-            <div class="relative flex flex-col items-center gap-4 sm:flex-row" data-aos="fade-right" data-aos-duration="1000">
-                <a href="#Explore" class="bg-red-600 py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 font-bold text-white text-base sm:text-lg">
+
+            <!-- Hero Buttons -->
+            <div class="flex gap-4 justify-center sm:justify-start mt-6" data-aos="fade-right" data-aos-duration="1000">
+                <a href="#Explore" class="bg-red-600 hover:bg-red-700 text-white py-3 px-8 rounded-full font-medium transition-transform transform hover:scale-105 shadow-lg">
                     Explore Now
                 </a>
-
-                <!-- <button class="bg-blue-600 py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 font-bold text-white text-base sm:text-lg flex items-center gap-2" onclick="{modal.show()}" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-5 h-5" alt="icon">
-                    <span>Watch Video</span>
-                </button> -->
-
             </div>
         </div>
         @empty
-        <p class="text-lg">Belum ada data terbaru</p>
+        <p class="text-lg text-gray-400 mt-10">Belum ada data terbaru</p>
         @endforelse
     </div>
-    <div class="warehouse-bg absolute w-full h-full top-0 right-0 overflow-hidden z-0 sm:w-[43%]" data-aos="fade-in" data-aos-duration="1000">
-        <div class="absolute inset-0 bg-black opacity-50 sm:hidden"></div>
-        <img src="{{ asset('assets/backgrounds/warehouseori.jpg') }}" class="object-cover w-full h-full" alt="banner">
+
+    <!-- Background Image with Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-50"></div>
+        <img src="{{ asset('assets/backgrounds/warehouseori.jpg') }}" class="w-full h-full object-cover filter brightness-75">
     </div>
 </div>
+
+
+
 
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20" data-aos="fade-up">
     <h2 class="font-bold text-lg" data-aos="fade-in" data-aos-delay="200">

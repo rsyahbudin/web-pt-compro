@@ -13,14 +13,14 @@
     <div class="container max-w-[1200px] mx-auto pt-12 pb-16 sm:pt-20 sm:pb-24 relative z-10 text-center sm:text-left text-white">
         @forelse ($hero_section as $hero)
         <input type="hidden" name="path_video" id="path_video" value="{{ $hero->path_video }}">
-        
+
         <div id="Hero" class="flex flex-col gap-6 items-center sm:items-start mt-10 relative px-6" data-aos="fade-up" data-aos-duration="1000">
             <!-- Hero Heading -->
             <div class="max-w-3xl mx-auto sm:mx-0 text-center sm:text-left">
                 <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700 drop-shadow-md mb-2 sm:mb-4" data-aos="fade-down" data-aos-duration="1200">
                     {{ $hero->heading }}
                 </h1>
-                
+
                 <!-- Subheading -->
                 <p class="text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-lg mx-auto sm:mx-0 opacity-90" data-aos="fade-left" data-aos-duration="1200">
                     {{ $hero->subheading }}
@@ -104,22 +104,31 @@
         @endforelse
     </div>
 </div>
-
-<div id="Teams" class="bg-gray-100 w-full py-20 px-4 mt-20" data-aos="fade-up">
+<div id="Teams" class="w-full py-20 px-4 mt-20" data-aos="fade-up">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-8 items-center">
-        <div class="flex flex-col gap-4 items-center" data-aos="fade-up">
-            <p class="bg-blue-500 text-white px-4 py-2 rounded-full uppercase font-bold text-sm">OUR CORE VALUE</p>
-            <h2 class="font-bold text-4xl leading-[45px] text-center text-gray-800">These Are The Core Values <br> Upheld By Our Company.</h2>
+        <!-- Heading Section -->
+        <div class="flex flex-col gap-4 items-center text-center" data-aos="fade-up">
+            <p class="bg-blue-500 text-white px-4 py-2 rounded-full uppercase font-semibold text-sm tracking-wide">
+                OUR CORE VALUE
+            </p>
+            <h2 class="font-bold text-3xl sm:text-4xl text-center text-gray-800">
+                These Are The Core Values <br> Upheld By Our Company
+            </h2>
         </div>
+
+        <!-- Team Cards -->
         <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full">
             @forelse($teams as $team)
-            <div class="card bg-white flex flex-col h-full items-center p-8 gap-4 rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
-                <div class="w-[100px] h-[100px] flex items-center justify-center rounded-full overflow-hidden bg-gray-200">
+            <div class="card bg-white flex flex-col items-center p-6 gap-4 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
+                <!-- Avatar -->
+                <div class="w-[120px] h-[120px] flex items-center justify-center rounded-full overflow-hidden mb-4">
                     <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full" alt="photo">
                 </div>
-                <div class="flex flex-col gap-1 text-center">
-                    <p class="font-bold text-xl leading-[30px] text-gray-800">{{ $team->name }}</p>
-                    <p class="text-gray-600">{{ $team->occupation }}</p>
+
+                <!-- Name and Occupation -->
+                <div class="flex flex-col gap-2 text-center">
+                    <p class="font-bold text-xl text-gray-800">{{ $team->name }}</p>
+                    <p class="text-sm text-gray-600">{{ $team->occupation }}</p>
                 </div>
             </div>
             @empty
@@ -130,10 +139,18 @@
 </div>
 
 <div id="Testimonials" class="w-full flex flex-wrap items-center mt-20" data-aos="fade-up">
+    <!-- Our Warehouse Section -->
+
+
     <!-- Testimonial Text Section -->
     <div class="relative text-center px-4 mb-10 w-full lg:w-6/12 mx-auto">
         <div class="absolute top-0 left-0 transform -translate-y-1/2">
             <img src="{{ asset('assets/icons/quote.svg') }}" alt="quote icon" class="w-12 h-12">
+        </div>
+        <div class="flex flex-col items-center text-center mb-10 w-full">
+            <p class="bg-blue-500 text-white px-4 py-2 rounded-full uppercase font-semibold text-sm tracking-wide">
+                OUR WAREHOUSE
+            </p>
         </div>
         <h2 class="font-semibold text-4xl leading-tight relative z-10 mb-4">
             Discover Our Warehouse <br> Serving Clients Nationwide
@@ -159,63 +176,7 @@
     <!-- Carousel Indicators (optional) -->
     <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0 mt-4 w-full"></div>
 </div>
-<div id="Awards" class="container mx-auto flex flex-col gap-8 mt-20 px-4">
-    <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
-        <div class="flex flex-col gap-4">
-            <h2 class="font-bold text-4xl leading-tight">
-                Our Commitment to Excellence<br>Defines Our Vision, Mission, and Values.
-            </h2>
-        </div>
-        <a href="{{ route('front.about') }}" class="bg-red-600 p-4 rounded-xl font-bold text-white mt-6 md:mt-0">
-            Explore More
-        </a>
-    </div>
 
-    <div class="awards-card-container grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex shrink-0">
-                <img src="{{ asset('assets/icons/values.jpg') }}" alt="Vision icon" class="w-16 h-14">
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-xl">Vision</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-500 text-sm">
-            <ul class="list-inside mt-2">
-                <li>We will strive to dominate every market sector in the food and beverage industry by emphasizing quality, marketing strategies, and customer service via the skill and dedication of every person in every role they perform.</li>
-                <li>To be the industry's chosen leading partner for the provision of excellent raw materials, nutritional products, and business solution.</li>
-            </ul>
-            </p>
-        </div>
-
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex shrink-0">
-                <img src="{{ asset('assets/icons/mission.jpg') }}" alt="Mission icon" class="w-16 h-14">
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-xl">Mission</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-500 text-sm">
-            <ul class="list-inside mt-2">
-                <li>Our goal is to deliver the finest service so that the food and beverage sector can embrace us at all levels.</li>
-            </ul>
-            </p>
-        </div>
-
-        <div class="awards-card bg-white flex flex-col h-full p-6 gap-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-            <div class="flex shrink-0">
-                <img src="{{ asset('assets/icons/vision.jpg') }}" alt="Values icon" class="w-16 h-14">
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-xl">Values</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-500 text-sm">
-            <ul class="list-inside mt-2">
-                <li>We uphold long-term client relationships by keeping our word, supporting our business dealings, and providing the highest level of professional services to foster mutual growth.</li>
-            </ul>
-            </p>
-        </div>
-    </div>
-</div>
 
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-4 mt-20" data-aos="fade-up">
     <div class="container max-w-[1000px] mx-auto overflow-hidden">
@@ -250,7 +211,7 @@
                 </div>
                 <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="200">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-3">
-                        <span class="font-bold text-lg">Is it possible for customers to request items not listed in PT SPS's product catalog?                        </span>
+                        <span class="font-bold text-lg">Is it possible for customers to request items not listed in PT SPS's product catalog? </span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
                     </button>
                     <div id="accordion-faq-3" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">

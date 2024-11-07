@@ -24,7 +24,7 @@ class UpdatePrincipleRequest extends FormRequest
         return [
             //
             "name" => ["required", "string", "max:255"],
-            "subtitle" => ["required", 'string', 'max:255'],
+            "subtitle" => ["required", 'string', 'max:500'],
             "thumbnail" => ["sometimes", "image", "mimes:png,jpg,jpeg,webp"],
             "icon" => ["sometimes", "image", "mimes:png,jpg,jpeg,webp"],
             "keypoints" => ["sometimes", "array"], // Ensure keypoints is an array

@@ -25,11 +25,12 @@
                 <img src="{{ Storage::url($principle->thumbnail) }}"
                     class="product-image w-full h-full object-cover transition-transform duration-200 transform hover:scale-105 rounded-lg"
                     alt="{{ $principle->name }}" />
-                <div class="overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 sm:opacity-100 transition-opacity duration-300 hover:opacity-100 ">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-100 sm:opacity-0 sm:hover:opacity-100 transition-opacity duration-300">
                     <h5 class="text-white text-lg font-semibold">{{ $principle->name }}</h5>
                 </div>
             </div>
         </div>
+
 
         <!-- Modal -->
         <div id="productModal{{ $principle->id }}" class="fixed inset-0 flex items-center justify-center hidden transition-opacity duration-300 z-50 modal" onclick="closeModal({{ $principle->id }})">
@@ -51,23 +52,29 @@
                         <div class="mt-2 mx-auto w-24 h-1 bg-red-600 rounded-full"></div>
                     </div>
 
-                    <!-- Added Product List Heading -->
+                    <!-- Product List Heading -->
                     <h6 class="text-lg font-bold text-gray-800 mb-4 text-center">Product List</h6>
 
                     @if($principle->keypoints->isEmpty())
                     <p class="text-gray-500 text-center mb-4">No key points available.</p>
                     @else
                     <div class="space-y-4">
-                        @foreach ($principle->keypoints as $keypoint)
-                        <div class="flex items-center py-3 px-4 bg-gray-100 rounded-lg shadow hover:shadow-md transition-shadow duration-300" onclick="event.stopPropagation();">
-                            <div class="bg-blue-600 text-white rounded-full p-2 mr-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                            </div>
-                            <p class="text-gray-800 text-lg font-medium">{{ $keypoint->keypoint }}</p>
-                        </div>
-                        @endforeach
+                        <table class="w-full text-left border-collapse border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+                            <thead>
+                                <tr class="bg-gray-200">
+                                    <th class="py-3 px-4 text-gray-700 text-lg font-semibold border-b border-gray-300">Product</th>
+                                    <th class="py-3 px-4 text-gray-700 text-lg font-semibold border-b border-gray-300">Region</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($principle->keypoints as $keypoint)
+                                <tr class="bg-white hover:bg-blue-50 transition duration-300" onclick="event.stopPropagation();">
+                                    <td class="py-3 px-4 text-gray-800 text-lg font-medium border-b border-gray-200">{{ $keypoint->keypoint }}</td>
+                                    <td class="py-3 px-4 text-gray-800 text-lg font-medium border-b border-gray-200">{{ $keypoint->manufacture }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                     @endif
                 </div>
@@ -81,6 +88,7 @@
         @endforelse
     </div>
 </div>
+
 
 <x-footer />
 
@@ -120,15 +128,15 @@
         }, 300); // Match this duration with your CSS transition
     }
 </script>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const overlays = document.querySelectorAll('.overlay');
+<!-- <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const overlays = document.querySelectorAll('.overlay');
 
-    overlays.forEach(overlay => {
-      if (window.innerWidth <= 640) {
-        overlay.classList.add('opacity-100');
-      }
+        overlays.forEach(overlay => {
+            if (window.innerWidth <= 640) {
+                overlay.classList.add('opacity-100');
+            }
+        });
     });
-  });
-</script>
+</script> -->
 @endpush

@@ -24,7 +24,7 @@ class StorePrincipleRequest extends FormRequest
         return [
             //
             "name" => ["required", "string", "max:255"],
-            "subtitle" => ["required", 'string', 'max:255'],
+            "subtitle" => ["required", 'string', 'max:500'],
             "thumbnail" => ["required", "image", "mimes:png,jpg,jpeg,webp"],
             "icon" => ["required", "image", "mimes:png,jpg,jpeg,webp"],
             "keypoints" => ["required", "array"], // Ensure keypoints is an array

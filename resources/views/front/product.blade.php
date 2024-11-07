@@ -63,7 +63,7 @@
                             <thead>
                                 <tr class="bg-gray-200">
                                     <th class="py-3 px-4 text-gray-700 text-lg font-semibold border-b border-gray-300">Product</th>
-                                    <th class="py-3 px-4 text-gray-700 text-lg font-semibold border-b border-gray-300">Region</th>
+                                    <th class="py-3 px-4 text-gray-700 text-lg font-semibold border-b border-gray-300">Country</th>
                                 </tr>
                             </thead>
                             <tbody>

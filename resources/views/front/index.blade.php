@@ -219,32 +219,36 @@
                 <!-- Accordion Items -->
                 <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-1">
-                        <span class="font-bold text-lg">Can installments be beneficial for both?</span>
+                        <span class="font-bold text-lg">What is the minimum order quantity for purchases from PT SPS?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
                     </button>
                     <div id="accordion-faq-1" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                        <p class="text-gray-600 pt-4">
+                            The minimum order quantity is 1 sack or drum. For further assistance, please contact us via
+                            <a href="https://wa.me/6281398351707" target="_blank" class="text-gray-800 underline">WhatsApp</a>.
+                        </p>
                     </div>
                 </div>
                 <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="100">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-2">
-                        <span class="font-bold text-lg">What kind of framework are you popular with?</span>
+                        <span class="font-bold text-lg">What are the options for product collection once a purchase has been made?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
                     </button>
                     <div id="accordion-faq-2" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                        <p class="text-gray-600 pt-4">The product can be delivered to the customer's warehouse, or alternatively, it can be collected from our warehouse at the specified address.
+                        </p>
                     </div>
                 </div>
                 <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="200">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-3">
-                        <span class="font-bold text-lg">What insurance provider do you use?</span>
+                        <span class="font-bold text-lg">Is it possible for customers to request items not listed in PT SPS's product catalog?                        </span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
                     </button>
                     <div id="accordion-faq-3" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                        <p class="text-gray-600 pt-4">Yes, we can accommodate such requests through our business partners who are equipped to meet those specific needs.</p>
                     </div>
                 </div>
-                <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="300">
+                <!-- <div class="accordion-item bg-white p-5 rounded-2xl shadow-sm max-w-full" data-aos="zoom-in" data-aos-delay="300">
                     <button class="accordion-button flex justify-between items-center w-full" data-accordion="accordion-faq-4">
                         <span class="font-bold text-lg">What if we have other questions?</span>
                         <img src="{{ asset('assets/icons/arrow-circle-down.svg')}}" class="w-6 h-6 text-blue-500 transition-transform duration-300" alt="icon">
@@ -252,7 +256,7 @@
                     <div id="accordion-faq-4" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                         <p class="text-gray-600 pt-4">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

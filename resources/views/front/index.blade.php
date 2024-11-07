@@ -46,9 +46,6 @@
     </div>
 </div>
 
-
-
-
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20" data-aos="fade-up">
     <h2 class="font-bold text-lg" data-aos="fade-in" data-aos-delay="200">
         Trusted by Leading Companies Across Indonesia
@@ -71,7 +68,6 @@
         @endforelse
     </div>
 </div>
-
 
 <div id="Explore"></div>
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-2 mt-10" data-aos="fade-up">
@@ -104,7 +100,7 @@
         @endforelse
     </div>
 </div>
-<div id="Teams" class="w-full py-20 px-4 mt-20" data-aos="fade-up">
+<div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-4 mt-20" data-aos="fade-up">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-8 items-center">
         <!-- Heading Section -->
         <div class="flex flex-col gap-4 items-center text-center" data-aos="fade-up">
@@ -176,7 +172,6 @@
     <!-- Carousel Indicators (optional) -->
     <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0 mt-4 w-full"></div>
 </div>
-
 
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-4 mt-20" data-aos="fade-up">
     <div class="container max-w-[1000px] mx-auto overflow-hidden">

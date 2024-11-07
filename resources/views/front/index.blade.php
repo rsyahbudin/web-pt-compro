@@ -17,12 +17,12 @@
         <div id="Hero" class="flex flex-col gap-6 items-center sm:items-start mt-10 relative px-6" data-aos="fade-up" data-aos-duration="1000">
             <!-- Hero Heading -->
             <div class="max-w-3xl mx-auto sm:mx-0 text-center sm:text-left">
-                <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700 drop-shadow-md mb-2 sm:mb-4" data-aos="fade-down" data-aos-duration="1200">
+                <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight bg-clip-text  text-white drop-shadow-md mb-2 sm:mb-4" data-aos="fade-down" data-aos-duration="1200">
                     {{ $hero->heading }}
                 </h1>
 
                 <!-- Subheading -->
-                <p class="text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-lg mx-auto sm:mx-0 opacity-90" data-aos="fade-left" data-aos-duration="1200">
+                <p class="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-lg mx-auto sm:mx-0 opacity-90" data-aos="fade-left" data-aos-duration="1200">
                     {{ $hero->subheading }}
                 </p>
             </div>

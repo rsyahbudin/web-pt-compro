@@ -113,9 +113,9 @@
         </div>
 
         <!-- Team Cards -->
-        <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full">
+        <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full" >
             @forelse($teams as $team)
-            <div class="card bg-white flex flex-col items-center p-6 gap-4 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
+            <div class="card bg-white flex flex-col items-center p-6 gap-4 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300" data-aos="fade-up">
                 <!-- Avatar -->
                 <div class="w-[120px] h-[120px] flex items-center justify-center rounded-full overflow-hidden mb-4">
                     <img src="{{ Storage::url($team->avatar)}}" class="object-cover w-full h-full" alt="photo">
